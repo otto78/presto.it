@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +16,9 @@ use App\Http\Controllers\PublicController;
 */
 
 Route::get('/', [PublicController::class, 'home'])->name('home');
+
+
+// rotte crud article
+Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
 
 
