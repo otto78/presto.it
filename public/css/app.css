@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css);
 @charset "UTF-8";
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
@@ -11290,8 +11292,57 @@ textarea.form-control-lg {
 
 body{
     background-color: var(--bg);
-    height: 100px;
-;
+
+    font-family: 'Montserrat', sans-serif;
+
+    
+}
+
+.masthead{
+    height: 100vh;
+    background-image: url("https://picsum.photos/seed/picsum/800/500");
+    background-size: cover;
+    background-position: bottom;
+}
+
+.section-2{
+    height: 100vh;
+    background-image: url("https://picsum.photos/800/500/?blur");
+    background-size: cover;
+    background-position: bottom;
+}
+
+.img-scale{
+    width: 12%;
+}
+
+.bg-dark{
+    background-color: var(--black)!important;
+}
+
+.btn-presto{
+    width:50%;
+    color: var(--giallo);
+    background-color:var(--black);
+    border-color:var(--giallo) ;
+}
+
+.btn-presto:hover{
+    color: var(--bg)
+}
+
+.presto-action{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    height: 40%;
+    background-color: #e3dc9529;;
+    
+    -webkit-backdrop-filter: blur(5px);;
+    
+            backdrop-filter: blur(5px);
+    
 }
 
 
