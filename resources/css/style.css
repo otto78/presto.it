@@ -1,0 +1,12 @@
+:root{
+    --bg:#E3DCC2;
+    --giallo:#E3DC95;
+    --black:#1B2021;
+
+}
+
+body{
+    background-color: var(--bg);
+    height: 100px;
+;
+}
