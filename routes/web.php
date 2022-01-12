@@ -28,3 +28,5 @@ Route::put('/article/update/{article}', [ArticleController::class, 'update'])->n
 Route::delete('/article/destroy/{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
 
 
+//rotta per le categorie in home
+Route::get('/category/{category}/{id}/articles', [PublicController::class, 'articlesByCategory'])->name('article.articlesByCategory');

@@ -23,7 +23,9 @@
                                           
                                           <p class="card-text">{{$article->description}}</p>
                                           <p class="card-text">{{$article->price}} €</p>
-                                          <p class="card-text">inserito il: {{$article->created_at->format('d/m/Y')}}</p>
+                                          <p class="card-text">Inserito il: {{$article->created_at->format('d/m/Y')}}</p>
+                                          <p class="card-text">Inserito da: {{$article->user->name}}</p>
+
                                           <hr>
                                           <a href="{{route('article.index')}}" class="btn btn-primary">Torna indietro</a>
                                           <a href="{{route('article.edit', compact('article'))}}" class="btn btn-warning">Modifica</a>

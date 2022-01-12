@@ -52,6 +52,7 @@ class ArticleController extends Controller
             'title' => $request->title, 
             'description' => $request->description,
             'price'=> $request->price,
+            'user_id'=>Auth::id(),
         ]);
 
         $article->categories()->sync($request->categories);

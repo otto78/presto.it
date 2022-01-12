@@ -35,12 +35,15 @@
                                           <p class="card-text">Inserito da: {{$article->user->name}}</p>
 
                                           <hr>
-                                          <a href="{{route('article.show', compact('article'))}}" class="btn btn-primary">Dettagli</a>
+                                          <a href="{{route('article.articlesByCategory',[
+                                              $articles->category->category,
+                                              $articles->category->id,
+                                          ])}}" class="btn btn-primary">{{$articles->category->category}}</a>
                                         </div>
                                       </div>
                             @endforeach
                         </div>
-
+                        {{$articles->links()}}
                 </div>
             </div>
         </div>
