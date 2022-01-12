@@ -23,7 +23,7 @@ class ArticleController extends Controller
     public function index()
     {   
         
-        $articles=Article::all();
+        $articles=Article::orderBy('created_at','desc')->get();
         return view('article.index', compact('articles'));
     }
 
@@ -50,7 +50,8 @@ class ArticleController extends Controller
 
         $article=Article::create([
             'title' => $request->title, 
-            'description' => $request->description
+            'description' => $request->description,
+            'price'=> $request->price,
         ]);
 
         $article->categories()->sync($request->categories);
@@ -97,6 +98,8 @@ class ArticleController extends Controller
         $article->update([
             'title'=> $request->title,
             'description'=> $request->description,
+            'price'=> $request->price,
+
 
         ]);
         $article->categories()->sync($request->categories);

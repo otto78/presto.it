@@ -38,6 +38,10 @@
                       </select>
                     </div>
                     <div class="col-12">
+                        <label for="inputPrice" class="form-label">Modifica qui il prezzo</label>
+                        <input type="text" value="{{$article->price}}" name="price" class="form-control" id="inputPrice">
+                      </div>
+                    <div class="col-12">
                       <button type="submit" class="btn btn-presto">Modifica</button>
                     </div>
                   </form>

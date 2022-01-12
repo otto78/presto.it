@@ -20,12 +20,12 @@
                       <input type="text" value="{{old('title')}}" name="title" class="form-control" id="inputTitle">
                     </div>
                     <div class="col-12">
-                      <label for="inputDescription" class="form-label">Inserisci qui la descrizione del tuo articolo</label>
-                      <textarea name="description" id="inputDescription" class="form-control">{{old('description')}}</textarea>
+                      <label for="inputImg" class="form-label">Inserisci l'immagine dell'articolo</label>
+                      <input type="file" disabled value="{{old('img')}}" name="image" class="form-control" id="inputImg">
                     </div>
                     <div class="col-12">
-                      <label for="inputImg" class="form-label">Insserisci l'immagine dell'articolo</label>
-                      <input type="file" disabled value="{{old('img')}}" name="image" class="form-control" id="inputImg">
+                      <label for="inputDescription" class="form-label">Inserisci qui la descrizione del tuo articolo</label>
+                      <textarea name="description" id="inputDescription" class="form-control">{{old('description')}}</textarea>
                     </div>
                     <div class="col-md-4">
                       <label for="inputCategory" class="form-label">Scegli la categoria</label>
@@ -39,6 +39,10 @@
 
 
                       </select>
+                    </div>
+                    <div class="col-12">
+                      <label for="inputPrice" class="form-label">Inserisci qui il prezzo</label>
+                      <input type="text" value="{{old('price')}}" name="price" class="form-control" id="inputPrice">
                     </div>
                     <div class="col-12">
                       <button type="submit" class="btn btn-primary">Aggiungi</button>
