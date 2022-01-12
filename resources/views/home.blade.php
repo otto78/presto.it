@@ -24,9 +24,9 @@
                                                           <h5 class="card-title">{{$category->category}}</h5>
                                                           <hr>
                                                             <a href="{{route('article.articlesByCategory',[
-                                                            $articles->category->category,
-                                                            $articles->category->id,
-                                                            ])}}" class="btn btn-primary">{{$articles->category->category}}</a>
+                                                            $category->category,
+                                                            $category->id,
+                                                            ])}}" class="btn btn-primary">{{$category->category}}</a>
                                                         </div>
                                                       </div>
                                             @endforeach
