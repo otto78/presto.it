@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Category;
 use GuzzleHttp\Psr7\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,8 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        
         $articles=Article::all();
         return view('article.index', compact('articles'));
     }
@@ -30,9 +32,11 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create()   
     {
-        return view('article.create');
+        $categories=Category::all();
+
+        return view('article.create', compact('categories'));
     }
 
     /**
@@ -42,11 +46,14 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+
         $article=Article::create([
             'title' => $request->title, 
             'description' => $request->description
         ]);
+
+        $article->categories()->sync($request->categories);
 
         return redirect(route('article.index'))->with('message', "L'annuncio è stato inserito correntamente!");
     }
@@ -58,7 +65,9 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Article $article)
+
     {
+            
         return view ('article.show', compact('article'));
     }
 
@@ -69,8 +78,11 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Article $article)
+
     {
-        return view ('article.edit', compact('article'));
+        $categories=Category::all();
+
+        return view ('article.edit', compact('article', 'categories'));
     }
 
     /**
@@ -87,6 +99,7 @@ class ArticleController extends Controller
             'description'=> $request->description,
 
         ]);
+        $article->categories()->sync($request->categories);
 
         return redirect(route('article.index'))->with('message', 'Hai modificato correttamente il tuo articolo');
     }

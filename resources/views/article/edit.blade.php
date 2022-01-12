@@ -30,9 +30,11 @@
                     </div>
                     <div class="col-md-4">
                       <label for="inputCategory" class="form-label">Cambia la categoria</label>
-                      <select id="inputCategory" disabled class="form-select">
+                      <select id="inputCategory" name="categories[]" class="form-control">
                         <option selected>Scegli...</option>
-                        <option>...</option>
+                        @foreach ($categories as $category)                      
+                          <option value="{{$category->id}}">{{$category->category}}</option>                           
+                        @endforeach
                       </select>
                     </div>
                     <div class="col-12">

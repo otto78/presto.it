@@ -20,11 +20,16 @@
                         <div class="col-12 mx-auto d-flex flex-wrap justify-content-evenly">
                             @foreach ($articles as $article)
                                     <div class="card" style="width: 18rem;">
-                                        <img src="..." class="card-img-top" alt="...">
+                                        <img src="{{Storage::url('img/segnaposto.png')}}" class="card-img-top" alt="Foto segnaposto">
                                         <div class="card-body">
                                           <h5 class="card-title">{{$article->title}}</h5>
-                                          <p class="card-subtitle">categoria</p>
+                                          
+                                          @foreach ($article->categories as $category)
+                                          
+                                          <p class="card-subtitle">{{$category->category}}</p>
                                           <br>
+                                        
+                                          @endforeach
                                           <p class="card-text">{{$article->description}}</p>
                                           <hr>
                                           <a href="{{route('article.show', compact('article'))}}" class="btn btn-primary">Dettagli</a>
