@@ -11306,10 +11306,16 @@ body{
 }
 
 .section-2{
-    height: 100vh;
-    background-image: url("https://picsum.photos/800/500/?blur");
-    background-size: cover;
-    background-position: bottom;
+    min-height: 100vh;
+    
+    
+}
+
+.section-3{
+    min-height: 100vh;
+    background-color: var(--giallo);
+    
+    
 }
 
 .img-scale{
@@ -11322,6 +11328,13 @@ body{
 
 .btn-presto{
     width:50%;
+    color: var(--giallo);
+    background-color:var(--black);
+    border-color:var(--giallo) ;
+}
+
+.btn-presto-category{
+    width:100%;
     color: var(--giallo);
     background-color:var(--black);
     border-color:var(--giallo) ;
@@ -11346,7 +11359,16 @@ body{
 }
 
 .margin-top{
-    margin-top: 200px;
+    margin-top: 100px;
+}
+
+.presto-link{
+    text-decoration: none;
+    color:rgba(255, 255, 255, 0.55)
+}
+
+.presto-link:hover{
+    color:rgba(255, 255, 255, 0.75)
 }
 
 

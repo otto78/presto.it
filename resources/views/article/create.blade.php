@@ -9,10 +9,12 @@
         </div>
     @endif
 
-<div class="container">
-    <div class="row justify-content-center align-items-center">
-        <div class="col-12 md-6 ">
-            <div class="margin-top">
+<div class="container margin-top">
+    <h1 class="text-center">Inserisci un annuncio in pochi istanti</h1>
+
+    <div class="row justify-content-center align-items-center shadow">
+        <div class="col-12 ">
+            <div class="my-4">
                 <form enctype="multipart/form-data" method="POST" action="{{route('article.store')}}" class="row g-3">
                     @csrf
                     <div class="col-12">
@@ -27,7 +29,7 @@
                       <label for="inputDescription" class="form-label">Inserisci qui la descrizione del tuo articolo</label>
                       <textarea name="description" id="inputDescription" class="form-control">{{old('description')}}</textarea>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-12">
                       <label for="inputCategory" class="form-label">Scegli la categoria</label>
                       <select id="inputCategory" name="categories[]" class="form-control">
                         <option selected>Scegli...</option>
@@ -44,8 +46,8 @@
                       <label for="inputPrice" class="form-label">Inserisci qui il prezzo</label>
                       <input type="text" value="{{old('price')}}" name="price" class="form-control" id="inputPrice">
                     </div>
-                    <div class="col-12">
-                      <button type="submit" class="btn btn-primary">Aggiungi</button>
+                    <div class="col-6">
+                      <button type="submit" class="btn btn-presto">Aggiungi</button>
                     </div>
                   </form>
             </div>
