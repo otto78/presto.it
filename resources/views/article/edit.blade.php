@@ -36,7 +36,7 @@
                       </select>
                     </div>
                     <div class="col-12">
-                      <button type="submit" class="btn btn-primary">Modifica</button>
+                      <button type="submit" class="btn btn-presto">Modifica</button>
                     </div>
                   </form>
                   <form method="post" action="{{route('article.destroy', compact('article'))}}">
