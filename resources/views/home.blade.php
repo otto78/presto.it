@@ -7,7 +7,7 @@
                 
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt neque possimus id dolore voluptatibus consequuntur!</p>
                 
-                <a href="{{}}" class="btn btn-presto"><strong>Inserisci il tuo annuncio</strong></a>
+                <a href="{{route('article.create')}}" class="btn btn-presto"><strong>Inserisci il tuo annuncio</strong></a>
             </div>
         </div>
     </div>

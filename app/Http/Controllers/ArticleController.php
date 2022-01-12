@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use GuzzleHttp\Psr7\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +32,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('article.create');
     }
 
     /**
@@ -36,7 +43,12 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $article=Article::create([
+            'title' => $request->title, 
+            'description' => $request->description
+        ]);
+
+        return redirect(route('article.index'))->with('message', "L'annuncio è stato inserito correntamente!");
     }
 
     /**

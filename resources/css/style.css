@@ -57,3 +57,7 @@ body{
     backdrop-filter: blur(5px);
     
 }
+
+.margin-top{
+    margin-top: 200px;
+}
