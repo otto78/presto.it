@@ -59,7 +59,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        return view ('article.show', compact('article'));
     }
 
     /**
@@ -70,7 +70,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view ('article.edit', compact('article'));
     }
 
     /**
@@ -82,7 +82,13 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        $article->update([
+            'title'=> $request->title,
+            'description'=> $request->description,
+
+        ]);
+
+        return redirect(route('article.index'))->with('message', 'Hai modificato correttamente il tuo articolo');
     }
 
     /**
@@ -93,6 +99,9 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        $article->delete();
+
+        return redirect(route('article.index'))->with('message', 'Hai eliminato correttamente il tuo articolo');
+
     }
 }
