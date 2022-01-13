@@ -29,7 +29,7 @@
           @if (Auth::user()->is_revisor)    
           <li class="nav-item">
             <a class="nav-link" href="{{route('revisor.index')}}">Revisore Home 
-              <span class="badge badge-pill badge-warning">{{\App\Article::ToBeRevisionedCount()}}</span> 
+              <span class="badge badge-pill badge-warning">{{\App\Models\Article::ToBeRevisionedCount()}}</span> 
             </a>
           </li>
           @endif

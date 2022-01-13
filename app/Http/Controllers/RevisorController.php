@@ -15,10 +15,10 @@ class RevisorController extends Controller
     } 
     public function index(){
 
-        $article=Article::where('is_accepted', 'null')->orderBy('created_at', 'desc')->first();
+        $article=Article::where('is_accepted', null)->orderBy('created_at', 'desc')->first();
          //controllare p o s
 
-        return view('revisor.idex', compact('article'));
+        return view('revisor.index', compact('article'));
 
     }
 
