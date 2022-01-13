@@ -116,7 +116,12 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
+        foreach($article->categories as $category){
+            $article->categories()->detach($category->id);
+        }
+
         $article->delete();
+        
 
         return redirect(route('article.index'))->with('message', 'Hai eliminato correttamente il tuo articolo');
 

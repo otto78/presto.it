@@ -32,26 +32,35 @@
                     <div class="col-12">
                       <label for="inputCategory" class="form-label">Cambia la categoria</label>
                       <select id="inputCategory" name="categories[]" class="form-control">
-                        <option selected>Scegli...</option>
+                       
+                        
+                        {{-- <option @if($article->categories->contains('id', $category->id))selected @endif>Scegli...</option> --}}
+                        
+
                         @foreach ($categories as $category)                      
-                          <option value="{{$category->id}}">{{$category->category}}</option>                           
+                          <option value="{{$category->id}}"@if($article->categories->contains('id', $category->id))selected @endif>{{$category->category}}</option>                           
                         @endforeach
                       </select>
                     </div>
                     <div class="col-12">
                         <label for="inputPrice" class="form-label">Modifica qui il prezzo</label>
                         <input type="text" value="{{$article->price}}" name="price" class="form-control" id="inputPrice">
-                      </div>
-                    <div class="col-6">
-                      <button type="submit" class="btn btn-presto">Modifica</button>
                     </div>
+                    <form method="post" action="{{route('article.edit', compact('article'))}}">
+                      @csrf
+                      @method('put')
+                      <button type="submit" class="btn btn-presto">Modifica</button>
+                      </form>
+                    {{-- <div class="col-6">
+                      <button type="submit" class="btn btn-presto">Modifica</button>
+                    </div> --}}
                   </form>
                   <div class="col-6 mb-4">
-                    <form method="post" action="{{route('article.destroy', compact('article'))}}">
-                    @csrf
-                    @method('delete')
-                    <button type="submit" class="btn btn-presto">Cancella</button>
-                  </form>
+                      <form method="post" action="{{route('article.destroy', compact('article'))}}">
+                      @csrf
+                      @method('delete')
+                      <button type="submit" class="btn btn-presto">Cancella</button>
+                      </form>
                   <div class="col-12 mt-4">
                     <a href="{{route('article.show', compact('article'))}}" class="btn btn-presto">Torna indietro</a>
                   </div>
