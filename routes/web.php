@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\RevisorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,10 @@ Route::delete('/article/destroy/{article}', [ArticleController::class, 'destroy'
 
 //rotta per le categorie in home
 Route::get('/category/{category}/{id}/articles', [PublicController::class, 'articlesByCategory'])->name('article.articlesByCategory');
+
+
+//rotte per i revisori
+
+Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
+Route::post('/revisor/article/{id}/accept', [RevisorController::class, 'revisor.accept'])-> name('revisor.accept');
+Route::post('/revisor/article/{id}/reject', [RevisorController::class, 'revisor.reject'])-> name('revisor.reject');
