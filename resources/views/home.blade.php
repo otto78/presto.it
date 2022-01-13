@@ -1,5 +1,11 @@
 <x-layout>
 
+    @if (session('access.denied.reviso.only'))
+    <div class="alert alert-danger">
+        Non sei un revisore - Ehhh Volevi!
+    </div>
+    @endif
+
 <section class="">
     <div class="container-fluid">
         <div class="row masthead justify-content-start align-items-center">

@@ -24,8 +24,16 @@
           <li class="nav-item">
             <a class="nav-link" href="{{route('register')}}">Register</a>
           </li>
-
           @else
+{{-- if revisor --}}
+          @if (Auth::user()->is_revisor)    
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('revisor.index')}}">Revisore Home 
+              <span class="badge badge-pill badge-warning">{{\App\Article::ToBeRevisionedCount()}}</span> 
+            </a>
+          </li>
+          @endif
+{{-- end if revisor --}}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Ciao, {{Auth::user()->name}}
@@ -34,6 +42,7 @@
                 <li><a class="dropdown-item" href="#">Profilo</a></li>
                 <li><a class="dropdown-item" href="#">I tuoi annunci</a></li>
                 <li><hr class="dropdown-divider"></li>
+                
                 <li><a class="dropdown-item" href="" onclick = "event.preventDefault(); document.getElementById('form-logout').submit();">Esci</a>
                     
                     <form action="{{route('logout')}}" method="post" id="form-logout">

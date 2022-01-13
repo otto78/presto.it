@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use Dotenv\Parser\Value;
 use Illuminate\Http\Request;
 
 class RevisorController extends Controller
@@ -13,9 +15,33 @@ class RevisorController extends Controller
     } 
     public function index(){
 
-        dd('Solo per i revisori migliori!');
+        $article=Article::where('is_accepted', 'null')->orderBy('created_at', 'desc')->first();
+         //controllare p o s
+
+        return view('revisor.idex', compact('article'));
+
     }
 
+    private function setAccepted($article_id, $value){
+
+        $article=Article::find($article_id);
+        $article->is_accepted=$value;
+        $article->save();
+        return redirect(route('revisor.index'));
+
+    }
+
+    public function accept($article_id){
+
+        return $this->setAccepted($article_id, true);
+
+    }
+
+    public function reject($article_id){
+
+        return $this->setAccepted($article_id, false);
+
+    }
 }
 
 
