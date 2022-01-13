@@ -37,5 +37,5 @@ Route::get('/category/{category}/{id}/articles', [PublicController::class, 'arti
 //rotte per i revisori
 
 Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
-Route::post('/revisor/article/{id}/accept', [RevisorController::class, 'revisor.accept'])-> name('revisor.accept');
-Route::post('/revisor/article/{id}/reject', [RevisorController::class, 'revisor.reject'])-> name('revisor.reject');
+Route::post('/revisor/article/{id}/accept', [RevisorController::class, 'accept'])-> name('revisor.accept');
+Route::post('/revisor/article/{id}/reject', [RevisorController::class, 'reject'])-> name('revisor.reject');

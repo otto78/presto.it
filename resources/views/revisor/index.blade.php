@@ -1,7 +1,7 @@
 <x-layout>
 
     @if ($article)
-    <div class="container">
+    <div class="container margin-top">
         <div class="row justify-content">
             <div class="col-md-12">
                 <div class="card">
@@ -31,13 +31,13 @@
                                 <div class="col-md-10">
                                     <div class="row mb-2">
                                         <div class="col-md-4">
-                                            <img src="/public/segnaposto.png" alt="segnaposto">
+                                            <img src="/img/segnaposto.png" alt="segnaposto">
                                         </div>
                                         <div class="col-md-8">... ... ... </div>
                                     </div>
                                     <div class="row mb-2">
                                         <div class="col-md-4">
-                                            <img src="/public/segnaposto.png" alt="segnaposto">
+                                            <img src="/img/segnaposto.png" alt="segnaposto">
                                         </div>
                                         <div class="col-md-8">... ... ... </div>
                                     </div>
@@ -56,7 +56,7 @@
                 </form>
             </div>
             <div class="col-md-6 text-right">
-                <form action="{{route('revisor.accepted', $article->id)}}" method="post">
+                <form action="{{route('revisor.accept', $article->id)}}" method="post">
                 @csrf
                     <button type="submit" class="btn btn-presto">Accetta</button>
                 </form>

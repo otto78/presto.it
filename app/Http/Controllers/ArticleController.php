@@ -13,7 +13,7 @@ class ArticleController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except('index');
+        $this->middleware('auth')->except('index', 'show');
     }
     /**
      * Display a listing of the resource.
@@ -23,9 +23,21 @@ class ArticleController extends Controller
     public function index()
     {   
         
-        $articles=Article::orderBy('created_at','desc')->get();
+        $articles=Article::where('is_accepted', true)->orderBy('created_at','desc')->get();
         return view('article.index', compact('articles'));
     }
+
+
+    /* Funzione che fa vedere gli articoli rifiutati 
+
+    public function indexReject()
+    {   
+        
+        $articles=Article::where('is_accepted', false)->orderBy('created_at','desc')->get();
+        return view('article.index', compact('articles'));
+    }
+    */
+
 
     /**
      * Show the form for creating a new resource.

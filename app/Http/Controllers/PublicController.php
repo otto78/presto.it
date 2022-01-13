@@ -12,7 +12,7 @@ class PublicController extends Controller
     }
     public function articlesByCategory($category, $category_id){
         $category=Category::find($category_id);
-        $articles=$category->articles()->paginate(5);
+        $articles=$category->articles()->where('is_accepted', true)->paginate(5);
         
         return view('article.articlesByCategory', compact('category', 'articles'));
         }
