@@ -24,10 +24,10 @@ class RevisorController extends Controller
 
     public function indexReject(){
 
-        $article=Article::where('is_accepted', false)->orderBy('created_at', 'desc')->first();
+        $article=Article::where('is_accepted', false)->orderBy('created_at', 'desc')->get();
          //controllare p o s
 
-        return view('revisor.reject', compact('article'));
+        return view('revisor.indexReject', compact('article'));
     }
 
     private function setAccepted($article_id, $value){
@@ -43,7 +43,14 @@ class RevisorController extends Controller
     
     public function restore($article_id){
         
-        return $this->setAccepted($article_id, null);
+        $article=Article::where('id', $article_id)->update(['is_accepted'=> NULL]);
+        // $value=null;
+        // $article=Article::find($article_id);
+        // $article->is_accepted=$value;
+        // $article->save();
+        
+        return redirect(route('revisor.index', compact('article')));
+        // // return $this->setAccepted($article_id, null);
 
     }
 

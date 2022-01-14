@@ -38,13 +38,13 @@ Route::delete('/article/destroy/{article}', [ArticleController::class, 'destroy'
 
 //rotte per i revisori
 Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
-Route::post('/revisor/article/{id}/accept', [RevisorController::class, 'accept'])-> name('revisor.accept');
+Route::put('/revisor/article/{id}/accept', [RevisorController::class, 'accept'])-> name('revisor.accept');
 Route::put('/revisor/article/{id}/reject', [RevisorController::class, 'reject'])-> name('revisor.reject');
-Route::get('/revisor/reject', [RevisorController::class, 'indexReject'])->name('revisor.reject');
 Route::put('/revisor/article/{id}/restore', [RevisorController::class, 'restore'])-> name('revisor.restore');
-Route::post('/revisor/article/{id}/reject', [RevisorController::class, 'reject'])-> name('revisor.reject');
+// vista articoli rejectati
+Route::get('/revisor/indexReject', [RevisorController::class, 'indexReject'])->name('revisor.indexReject');
+
 
 //rotte user_details
 Route::get('/user_details/show/{userDetail}', [UserDetailController::class, 'show'])->name('user_details.index');
 
-Route::post('/revisor/article/{id}/restore', [RevisorController::class, 'restore'])-> name('revisor.restore');

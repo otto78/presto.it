@@ -12,11 +12,11 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    @if (count($articles)==0)
+                    {{-- @if (count($articles)==0)
                     
                     <h3>Non ci sta nulla</h3>
                     
-                    @endif
+                    @endif --}}
                     
                         <div class="col-12 mx-auto d-flex flex-wrap justify-content-evenly">
                             @foreach ($articles as $article)
@@ -46,8 +46,12 @@
                                         </div>
                                       </div>
                             @endforeach
+                            <form class="my-5" action="{{route('revisor.indexReject', compact('article'))}}" method="get">
+                                @csrf
+                                
+                                    <button type="submit" class="btn btn-presto">Rivaluta</button>
+                                </form>
                         </div>
-
                 </div>
             </div>
         </div>
@@ -56,3 +60,4 @@
     </div>
         
     </x-layout>
+    

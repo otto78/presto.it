@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
             $categories=Category::all();
             View::share('categories', $categories);
             
-            $articles=Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(5)->get();
+            $articles=Article::where('is_accepted', false)->orderBy('created_at', 'desc')->take(5)->get();
             View::share('articles', $articles);
         }
     }
