@@ -49,7 +49,7 @@ class RevisorController extends Controller
         // $article->is_accepted=$value;
         // $article->save();
         
-        return redirect(route('revisor.index', compact('article')));
+        return redirect(route('revisor.indexReject', compact('article')));
         // // return $this->setAccepted($article_id, null);
 
     }

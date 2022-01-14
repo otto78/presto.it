@@ -24,4 +24,6 @@ class PublicController extends Controller
 
         return view('search_results', compact('q', 'articles'));
     }
+
+    
 }

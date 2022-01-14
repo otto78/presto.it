@@ -1,7 +1,7 @@
 <x-layout>
 
     <div class="container margin-top">
-        <h1 class="text-center">Tutti gli articoli</h1>
+        <h1 class="text-center">Tutti gli articoli da rivalutare</h1>
 
         @if (session('message'))
         <div class="alert alert-success">
@@ -46,11 +46,14 @@
                                         </div>
                                       </div>
                             @endforeach
-                            <form class="my-5" action="{{route('revisor.indexReject', compact('article'))}}" method="get">
-                                @csrf
-                                
-                                    <button type="submit" class="btn btn-presto">Rivaluta</button>
-                                </form>
+                            <form class="my-5" action="{{route('revisor.index', compact('article'))}}" method="get">
+                                @csrf                                
+                                <button type="submit" class="btn btn-presto">Torna indietro</button>
+                            </form>
+                            {{-- <form class="my-5" action="{{route('revisor.indexReject', compact('article'))}}" method="get">
+                                @csrf                                
+                                <button type="submit" class="btn btn-presto">Torna indietro</button>
+                            </form> --}}
                         </div>
                 </div>
             </div>

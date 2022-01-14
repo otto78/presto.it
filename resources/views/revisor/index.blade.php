@@ -26,20 +26,21 @@
                                 <div class="col-md-2"><h3>Descrizione</h3></div>
                                 <div class="col-md-10">{{$article->description}}</div>
                             </div>
+                            <hr>
                             <div class="row">
                                 <div class="col-md-2"><h3>Immagini</h3></div>
                                 <div class="col-md-10">
                                     <div class="row mb-2">
-                                        <div class="col-md-4">
-                                            <img src="/img/segnaposto.png" alt="segnaposto">
+                                        <div class="col-md-2">
+                                            <img src="/img/segnaposto.png" class="immg-fluid" alt="segnaposto">
                                         </div>
-                                        <div class="col-md-8">... ... ... </div>
+                                        <div class="col-md-10">... ... ... </div>
                                     </div>
                                     <div class="row mb-2">
-                                        <div class="col-md-4">
-                                            <img src="/img/segnaposto.png" alt="segnaposto">
+                                        <div class="col-md-2">
+                                            <img src="/img/segnaposto.png" class="immg-fluid" alt="segnaposto">
                                         </div>
-                                        <div class="col-md-8">... ... ... </div>
+                                        <div class="col-md-10">... ... ... </div>
                                     </div>
                                 </div>
                             </div>
@@ -71,10 +72,11 @@
 
     @endif
     <form class="my-5" action="{{route('revisor.indexReject', compact('article'))}}" method="get">
-        @csrf
-        
+        @csrf        
             <button type="submit" class="btn btn-presto">Rivaluta</button>
         </form>
+
+   
 
 
 

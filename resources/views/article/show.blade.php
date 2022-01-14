@@ -72,7 +72,7 @@
                                     <p >Inserito da: {{$article->user->name}}</p>
                                     
                                     <hr>
-                                    <a href="{{route('article.index')}}" class="btn btn-presto my-2">Torna indietro</a>
+                                    <a href="{{URL::previous()}}" class="btn btn-presto my-2">Torna indietro</a>
                                     
                                     @if  ($article->user->id==Auth::id())
                                         
