@@ -5,10 +5,14 @@
 
 }
 
+*{
+    font-family: OpenDyslexic;
+}
+
 body{
     background-color: var(--bg);
 
-    font-family: 'Montserrat', sans-serif;
+    
 
     
 }
