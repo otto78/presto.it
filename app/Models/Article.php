@@ -7,9 +7,12 @@ use App\Models\User;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Laravel\Scout\Searchable;
 
 class Article extends Model
 {
+    use Searchable;
+
     use HasFactory;
     protected $fillable=[
         'title',
@@ -29,4 +32,17 @@ class Article extends Model
     static public function ToBeRevisionedCount(){
         return Article::where('is_accepted', null)->count();
     }
+
+    public function toSearchableArray()
+    {
+        $array=[
+            'id'=> $this->id,
+            'title'=> $this->title,
+            'description'=> $this->description,
+            'price'=> $this->price,
+            //'user_id'=> $this->user_id,
+        ];
+        return $array;
+    }
+    
 }
