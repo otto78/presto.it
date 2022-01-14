@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\RevisorController;
+use App\Http\Controllers\UserDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +37,10 @@ Route::delete('/article/destroy/{article}', [ArticleController::class, 'destroy'
 
 
 //rotte per i revisori
-
 Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
 Route::post('/revisor/article/{id}/accept', [RevisorController::class, 'accept'])-> name('revisor.accept');
 Route::post('/revisor/article/{id}/reject', [RevisorController::class, 'reject'])-> name('revisor.reject');
+
+//rotte user_details
+Route::get('/user_details/show/{userDetail}', [UserDetailController::class, 'show'])->name('user_details.index');
+

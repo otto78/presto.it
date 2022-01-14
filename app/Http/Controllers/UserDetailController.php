@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\UserDetail;
 use Illuminate\Http\Request;
 
 class UserDetailController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,7 @@ class UserDetailController extends Controller
      */
     public function index()
     {
-        //
+       return view('user_details.index', compact('user'));
     }
 
     /**
@@ -24,7 +30,9 @@ class UserDetailController extends Controller
      */
     public function create()
     {
-        //
+        // $users=User::all();
+        
+        // return view('user_details.create', compact('user'));
     }
 
     /**
@@ -46,7 +54,7 @@ class UserDetailController extends Controller
      */
     public function show(UserDetail $userDetail)
     {
-        //
+        return view('user_details.index', compact('userDetail'));
     }
 
     /**

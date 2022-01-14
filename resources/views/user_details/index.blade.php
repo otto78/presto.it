@@ -57,7 +57,7 @@
                     </div>
                         <div class="col-12 col-md-6">
                                                                             
-                                <div class="my-4">
+                                {{-- <div class="my-4">
                                     <h5>{{$article->title}}</h5>
                                     @foreach ($article->categories as $category)
                                     
@@ -79,7 +79,7 @@
                                     <a href="{{route('article.edit', compact('article'))}}" class="btn btn-presto my-2">Modifica</a>
                                         
                                     @endif
-                                </div>
+                                </div> --}}
                                                 
                         </div>    
                     
