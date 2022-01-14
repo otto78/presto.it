@@ -3,7 +3,8 @@
     @if ($article)
     <div class="container margin-top">
         <div class="row justify-content">
-            <div class="col-md-12">
+            {{-- Vista articoli da accettare --}}
+            <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">
                         <h2>Annuncio # {{$article->id}}</h2>
@@ -47,21 +48,24 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row justify-content-mt-5">
-            <div class="col-md-6">
-                <form action="{{route('revisor.reject', $article->id)}}" method="post">
-                @csrf
-                    <button type="submit" class="btn btn-presto">Rifiuta</button>
-                </form>
-            </div>
-            <div class="col-md-6 text-right">
-                <form action="{{route('revisor.accept', $article->id)}}" method="post">
+            <div class="col-2">
+                <form class="mb-5" action="{{route('revisor.accept', $article->id)}}" method="post">
                 @csrf
                     <button type="submit" class="btn btn-presto">Accetta</button>
                 </form>
+                <form action="{{route('revisor.reject', $article->id)}}" method="post">
+                @csrf
+                    <button type="submit" class="btn btn-presto">Rifiuta</button>
+                </form >
+                <form class="my-5" action="" method="post">
+                    @csrf
+                        <button type="submit" class="btn btn-presto">Rifiutati</button>
+                    </form>
+
             </div>
         </div>
+
+        
     </div>
 
     @else 
