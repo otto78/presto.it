@@ -36,13 +36,14 @@ class Article extends Model
     public function toSearchableArray()
     {
         $categorie = $this->categories->pluck('category')->join(', ');
+        
         $array=[
             'id'=> $this->id,
             'title'=> $this->title,
             'description'=> $this->description,
             'price'=> $this->price,
             'category'=> $categorie,
-            //'user_id'=> $this->user_id,
+            
 
         ];
         return $array;
