@@ -43,7 +43,7 @@ body{
 }
 
 .btn-presto{
-    width:50%;
+    width:100%;
     color: var(--giallo);
     background-color:var(--black);
     border-color:var(--giallo) ;

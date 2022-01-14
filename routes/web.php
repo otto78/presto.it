@@ -44,3 +44,4 @@ Route::post('/revisor/article/{id}/reject', [RevisorController::class, 'reject']
 //rotte user_details
 Route::get('/user_details/show/{userDetail}', [UserDetailController::class, 'show'])->name('user_details.index');
 
+Route::post('/revisor/article/{id}/restore', [RevisorController::class, 'restore'])-> name('revisor.restore');
