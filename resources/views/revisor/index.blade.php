@@ -55,9 +55,10 @@
                 </form>
                 <form action="{{route('revisor.reject', $article->id)}}" method="post">
                 @csrf
+                @method('put')
                     <button type="submit" class="btn btn-presto">Rifiuta</button>
                 </form >
-                <form class="my-5" action="" method="post">
+                <form class="my-5" action="{{route('revisor.reject', compact('article'))}}" method="get">
                     @csrf
                         <button type="submit" class="btn btn-presto">Rifiutati</button>
                     </form>

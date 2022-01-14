@@ -39,5 +39,6 @@ Route::delete('/article/destroy/{article}', [ArticleController::class, 'destroy'
 
 Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
 Route::post('/revisor/article/{id}/accept', [RevisorController::class, 'accept'])-> name('revisor.accept');
-Route::post('/revisor/article/{id}/reject', [RevisorController::class, 'reject'])-> name('revisor.reject');
-Route::post('/revisor/article/{id}/restore', [RevisorController::class, 'restore'])-> name('revisor.restore');
+Route::put('/revisor/article/{id}/reject', [RevisorController::class, 'reject'])-> name('revisor.reject');
+Route::get('/revisor/reject', [RevisorController::class, 'indexReject'])->name('revisor.reject');
+Route::put('/revisor/article/{id}/restore', [RevisorController::class, 'restore'])-> name('revisor.restore');

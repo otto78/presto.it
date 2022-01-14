@@ -39,6 +39,8 @@ class RevisorController extends Controller
 
     }
 
+
+    
     public function restore($article_id){
         
         return $this->setAccepted($article_id, null);

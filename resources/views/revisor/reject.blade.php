@@ -39,6 +39,7 @@
                                           <a href="{{route('article.show', compact('article'))}}" class="btn btn-presto">Dettagli</a>
                                           <form class="my-5" action="{{route('revisor.restore', $article->id)}}" method="post">
                                             @csrf
+                                            @method('put')
                                                 <button type="submit" class="btn btn-presto">Rivaluta</button>
                                             </form>
 
