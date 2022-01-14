@@ -5,16 +5,13 @@
 
 }
 
-*{
-    font-family: OpenDyslexic;
-}
 
 body{
     background-color: var(--bg);
-
+    font-family: 'Mochiy Pop P One', sans-serif;
     
 
-    
+  
 }
 
 .masthead{
