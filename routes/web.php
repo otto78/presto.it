@@ -17,7 +17,12 @@ use App\Http\Controllers\RevisorController;
 */
 
 Route::get('/', [PublicController::class, 'home'])->name('home');
+Route::get('/search', [PublicController::class, 'search'])->name('search');
+// Route::get('/search/results', [PublicController::class, ''])->name('search');
 
+
+//rotta per le categorie in home
+Route::get('/category/{category}/{id}/articles', [PublicController::class, 'articlesByCategory'])->name('article.articlesByCategory');
 
 
 // rotte crud article
@@ -28,10 +33,6 @@ Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name(
 Route::get('/article/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
 Route::put('/article/update/{article}', [ArticleController::class, 'update'])->name('article.update');
 Route::delete('/article/destroy/{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
-
-
-//rotta per le categorie in home
-Route::get('/category/{category}/{id}/articles', [PublicController::class, 'articlesByCategory'])->name('article.articlesByCategory');
 
 
 //rotte per i revisori

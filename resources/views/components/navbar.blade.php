@@ -6,8 +6,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="d-flex ms-auto">
-            <input class="form-control me-2" type="search" placeholder="Cerca..." aria-label="Search">
+        <form class="d-flex ms-auto" action="{{route('search')}}" method="get">
+            <input class="form-control me-2" type="search" name='q' placeholder="Cerca..." aria-label="Search">
             <button class="btn btn-dark" type="submit"><i class="fas fa-search fa-2x"></i></button>
         </form>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
