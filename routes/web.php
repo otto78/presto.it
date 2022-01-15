@@ -46,7 +46,7 @@ Route::get('/revisor/indexReject', [RevisorController::class, 'indexReject'])->n
 
 
 //rotte user_details
-Route::get('/user_details/show/{userDetail}', [UserDetailController::class, 'show'])->name('user_details.index');
+Route::get('/user_details/profile/', [UserDetailController::class, 'index'])->name('user_details.index');
 
 
 

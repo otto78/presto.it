@@ -12,7 +12,7 @@
 
 
 <div class="container">
-    <div class="row justify-content-center align-items-center">
+    <div class="row  justify-content-center align-items-center">
         <div class="col-12 col-md-6 card shadow p-5">
 
             <form method="post" action="{{route('login')}}">
@@ -26,7 +26,7 @@
                   <input type="password" name="password" class="form-control" id="InputPassword1">
                   <div id="exampleInputPassword1" class="form-text">Non condivedere la tua password con nessuno</div>
                 </div>
-                <button type="submit" class="btn btn-primary">Accedi</button>
+                <button type="submit" class="btn btn-presto">Accedi</button>
               </form>
         </div>
     </div>

@@ -20,7 +20,7 @@ class UserDetailController extends Controller
      */
     public function index()
     {
-       return view('user_details.index', compact('user'));
+       return view('user_details.index',);
     }
 
     /**
