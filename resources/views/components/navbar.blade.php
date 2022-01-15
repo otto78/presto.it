@@ -19,6 +19,12 @@
             <a class="nav-link" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Fai login</a>
           </li> --}}
 
+          
+          
+
+          <li class="nav-item ms-auto">
+            <a class="nav-link" aria-current="page" href="{{route('revisor.workWithUs')}}">Lavora con noi</a>
+          </li>         
           <li class="nav-item ms-auto">
             <a class="nav-link" aria-current="page" href="{{route('login')}}">Login</a>
           </li>
@@ -27,10 +33,14 @@
 {{-- if revisor --}}
           @if (Auth::user()->is_revisor)    
           <li class="nav-item">
-            <a class="nav-link" href="{{route('revisor.index')}}">Revisore Home 
+            <a class="nav-link" href="{{route('revisor.index')}}">Revisor Home 
               <span class="badge badge-pill badge-warning">{{\App\Models\Article::ToBeRevisionedCount()}}</span> 
             </a>
           </li>
+          @else
+          <li class="nav-item ms-auto">
+            <a class="nav-link" aria-current="page" href="{{route('revisor.workWithUs')}}">Lavora con noi</a>
+          </li> 
           @endif
 {{-- end if revisor --}}
           <li class="nav-item dropdown">

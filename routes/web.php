@@ -5,6 +5,7 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\UserDetailController;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +18,14 @@ use App\Http\Controllers\UserDetailController;
 |
 */
 
+
+//rotte pubbliche
 Route::get('/', [PublicController::class, 'home'])->name('home');
 Route::get('/search', [PublicController::class, 'search'])->name('search');
-// Route::get('/search/results', [PublicController::class, ''])->name('search');
-
-
-//rotta per le categorie in home
 Route::get('/category/{category}/{id}/articles', [PublicController::class, 'articlesByCategory'])->name('article.articlesByCategory');
 
+//rotta per diventare revisore
+Route::get('/workWithUs', [PublicController::class, 'workWithUs'])->name('revisor.workWithUs')->middleware('auth');
 
 // rotte crud article
 Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
@@ -41,7 +42,6 @@ Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.
 Route::put('/revisor/article/{id}/accept', [RevisorController::class, 'accept'])-> name('revisor.accept');
 Route::put('/revisor/article/{id}/reject', [RevisorController::class, 'reject'])-> name('revisor.reject');
 Route::put('/revisor/article/{id}/restore', [RevisorController::class, 'restore'])-> name('revisor.restore');
-// vista articoli rejectati
 Route::get('/revisor/indexReject', [RevisorController::class, 'indexReject'])->name('revisor.indexReject');
 
 
