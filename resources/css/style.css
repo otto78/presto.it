@@ -84,3 +84,15 @@ body{
 .presto-link:hover{
     color:rgba(255, 255, 255, 0.75)
 }
+
+.clicca{
+    color: #2b2e2e;
+    text-decoration: none;
+    
+    
+}
+
+.clicca:hover{
+    color: var(--black);
+    
+}

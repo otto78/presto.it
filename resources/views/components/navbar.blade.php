@@ -14,16 +14,15 @@
           
 
           @guest
-          <li class="nav-item">
 
+          {{-- <li class="nav-item">
             <a class="nav-link" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Fai login</a>
-          </li>
+          </li> --}}
+
           <li class="nav-item ms-auto">
             <a class="nav-link" aria-current="page" href="{{route('login')}}">Login</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('register')}}">Register</a>
-          </li>
+          
           @else
 {{-- if revisor --}}
           @if (Auth::user()->is_revisor)    

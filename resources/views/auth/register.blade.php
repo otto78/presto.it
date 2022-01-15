@@ -11,7 +11,7 @@
 @endif
 
 <div class="container">
-    <div class="row justify-content-center align-items-center">
+    <div class="row section-2 justify-content-center align-items-center">
         <div class="col-12 col-md-6 card shadow p-5">
 
             <form method="post" action="{{route('register')}}">
@@ -33,7 +33,7 @@
                     <label for="exampleInputPasswordConfirmation" class="form-label">Conferma la password</label>
                     <input type="password" name="password_confirmation" class="form-control" id="InputPasswordConfirmation">
                   </div>
-                <button type="submit" class="btn btn-primary">Registrati</button>
+                <button type="submit" class="btn btn-presto">Registrati</button>
               </form>
         </div>
     </div>

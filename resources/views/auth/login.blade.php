@@ -11,8 +11,8 @@
 @endif
 
 
-<div class="container">
-    <div class="row  justify-content-center align-items-center">
+<div class="container ">
+    <div class="row section-2 justify-content-center align-items-center">
         <div class="col-12 col-md-6 card shadow p-5">
 
             <form method="post" action="{{route('login')}}">
@@ -24,10 +24,10 @@
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Password</label>
                   <input type="password" name="password" class="form-control" id="InputPassword1">
-                  <div id="exampleInputPassword1" class="form-text">Non condivedere la tua password con nessuno</div>
                 </div>
                 <button type="submit" class="btn btn-presto">Accedi</button>
               </form>
+              <p class="mt-3 ">Se non sei registrato <span><a class="clicca" href="{{route('register')}}">clicca qui</a></span></p>
         </div>
     </div>
 </div>
