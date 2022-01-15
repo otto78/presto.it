@@ -16,9 +16,13 @@ class WorkWithUsMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+
+    public $user_contact; 
+
+    public function __construct($user_contact)
     {
-        //
+      $this->user_contact= $user_contact;
+
     }
 
     /**
@@ -28,6 +32,8 @@ class WorkWithUsMail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        
+
+        return $this->from('noreplay@presto.it')->view('Mail/WorkWithUsMail');
     }
 }

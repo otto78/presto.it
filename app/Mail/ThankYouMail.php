@@ -8,6 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
 class ThankYouMail extends Mailable
+
 {
     use Queueable, SerializesModels;
 
@@ -16,9 +17,12 @@ class ThankYouMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $user_contact; 
+
+    public function __construct($user_contact)
     {
-        //
+      $this->user_contact= $user_contact;
+
     }
 
     /**
@@ -28,6 +32,8 @@ class ThankYouMail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        
+
+        return $this->from('confirmedregistered@presto.it')->view('Mail/ThankYouMail');
     }
 }

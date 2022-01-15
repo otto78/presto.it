@@ -9,9 +9,10 @@
             <div class="col-12">
                 <p>Hai avuto un'ottima idea a pensare di lavorare con noi. Ci farebbe piacere sepere il perchè!</p>
             </div>
-            <textarea name="workWithUsMessage" id="" class="form-control" rows="10"></textarea>
-        <div class="col-4 mt-5">
-            <form action="" method="post">
+            <div class="col-12 mt-5">
+                <form action="{{route('workWithUsSubmit')}}" method="post">
+                    @csrf
+                    <textarea name="message" id="" class="form-control" rows="10"></textarea>
                 <button class="btn btn-presto" type="submit">Invia la tua candidatura</button>
             </form>
         </div>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\UserDetailController;
 use GuzzleHttp\Middleware;
@@ -26,6 +27,7 @@ Route::get('/category/{category}/{id}/articles', [PublicController::class, 'arti
 
 //rotta per diventare revisore
 Route::get('/workWithUs', [PublicController::class, 'workWithUs'])->name('revisor.workWithUs')->middleware('auth');
+Route::post('/workWithUs/submit',[MailController::class, 'workWithUsSubmit'])->name('workWithUsSubmit');
 
 // rotte crud article
 Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
