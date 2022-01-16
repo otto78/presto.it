@@ -1,28 +1,31 @@
 <x-layout>
     
     @if (session('access.denied.reviso.only'))
-    <div class="alert alert-danger">
-        Non sei un revisore - Ehhh Volevi!
-    </div>
+        <div class="alert alert-danger">
+            Non sei un revisore - Ehhh Volevi!
+        </div>
     @endif
-    
-    <section class="">
+
+    {{-- Masthead --}}
+    <section>
         <div class="container-fluid">
-            <div class="row masthead justify-content-start align-items-center">
-                <div class="col-6 ms-5 px-5 presto-action shadow">
-                    
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt neque possimus id dolore voluptatibus consequuntur!</p>
+            <div class="row masthead justify-content-center align-items-center">
+                <div class="col-12 presto-action">
+                    <br>
+                    <p class="text-center">Ogni oggetto ha una storia, raccontala e dagli valore!</p>
+                    <br>
                     
                     <a href="{{route('article.create')}}" class="btn btn-presto"><strong>Inserisci il tuo annuncio</strong></a>
                 </div>
             </div>
         </div>
     </section>
-    
-    <section class="">
+
+    {{-- Sezione categorie --}}
+    <section class="mb-5">
         <div class="container-fluid">
-            <div class="row ">
-                <div class="col-12 my-4">
+            <div class="row">
+                <div class="col-12 my-5">
                     <h2 class="text-center">Categorie</h2>
                 </div>
             </div>    
@@ -49,15 +52,53 @@
         </div>
         
     </section>
-    {{-- Articoli --}}
-    <section>
+
+    {{-- Sezione Articoli --}}
+    <section class="article-body">        
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center my-5">Ultimi annunci</h2>
+            </div>
+            {{-- Cards --}}
+            <div class="col-12 article">
+                @foreach ($articles as $article)                        
+                <div class="card-article">
+                    <div class="circle">
+                        {{-- immagine da gestire --}}
+                    </div>
+                    <div class="dettagli">
+                        <h2>{{$article->title}}</h2>
+                        <h5>{{$article->price}} €</h5>                            
+                        <p class="mt-3">{{\Str::limit($article->description, 80)}}</p>                           
+                        <p class="d-flex justify-content-between mx-3">
+                            <span>
+                                @foreach ($article->categories as $category)           
+                                <a class="clicca" href="{{route('article.articlesByCategory',[$category->category, $category->id])}}">{{$category->category}}</a>                               
+                                @endforeach                                 
+                            </span>
+                            <span><a class="clicca" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a></span> 
+                        </p>
+                        <a href="{{route('article.show', compact('article'))}}" class="btn btn-presto shadow">Dettagli</a>
+                    </div>
+                </div>                                      
+                @endforeach
+            </div>           
+        </div>            
+    </section>
+    
+    
+    
+    
+    
+    {{-- Sezione vecchia Articoli --}}
+    {{-- <section>
         <div class="container-fluid">
             <div class="row section-3 justify-content-start align-items-center">
                 <div class="col-12 my-2">
                     <h2 class="text-center">Ultimi articoli</h2>
                 </div>
                 
-                {{-- Card article --}}
+               
                 <div class="col-12 mx-auto my-4 d-flex flex-wrap justify-content-evenly ">
                     @foreach ($articles as $article)
                     <div class="card-article" style="width: 18rem;">
@@ -85,39 +126,26 @@
                             </div>
                         </div>
                         @endforeach
-                    </div>
-                    
-                    
-                    
-                    
-                    
-                    
+                    </div>                
                 </div>
             </div>
-        </section>
-        
-        {{-- Card Category --}}
+    </section> --}}
+
+    {{-- Vecchia Card Category --}}
         {{-- <div class="col-12 mx-auto d-flex flex-wrap justify-content-evenly">
             @foreach ($categories as $category)
-            <div class="my-2 shadow " style="width: 18rem;">
-                <img src="/img/segnaposto.png" class="img-fluid rounded" alt="Foto segnaposto">
-                <div class="d-flex justify-content-center">
-                    
-                    
-                    <a href="{{route('article.articlesByCategory',[
-                    $category->category,
-                    $category->id,
-                    ])}}" class="btn btn-presto-category mt-2">{{$category->category}}</a>
+                <div class="my-2 shadow " style="width: 18rem;">
+                    <img src="/img/segnaposto.png" class="img-fluid rounded" alt="Foto segnaposto">
+                    <div class="d-flex justify-content-center">
+                        
+                        
+                        <a href="{{route('article.articlesByCategory',[
+                        $category->category,
+                        $category->id,
+                        ])}}" class="btn btn-presto-category mt-2">{{$category->category}}</a>
+                    </div>
                 </div>
-            </div>
             @endforeach
         </div>  --}}
-        
-        
-        
-        
-        
-        
-        
-        
+              
     </x-layout>

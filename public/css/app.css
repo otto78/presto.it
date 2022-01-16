@@ -11302,6 +11302,7 @@ body{
 
 .masthead{
     height: 100vh;
+    
     background-image: url("/img/masthead.png");
     background-size: cover;
     background-position: center;
@@ -11332,12 +11333,12 @@ body{
     background-color: var(--white)!important;
 }
 
-.btn-presto{
+/* .btn-presto{
     width:100%;
     color: var(--giallo);
     background-color:var(--black);
     border-color:var(--giallo) ;
-}
+} */
 
 .btn-presto-category{
     width:100%;
@@ -11351,16 +11352,19 @@ body{
 }
 
 .presto-action{
-    display: flex;
+    
     flex-direction: column;
     justify-content: center;
     border-radius: 10px;
-    height: 40%;
-    background-color: #e3dc9529;;
+    height: 250px;
+    width: 250px;
     
-    -webkit-backdrop-filter: blur(5px);;
     
-            backdrop-filter: blur(5px);
+    transform: translate(15px, -15px);
+    
+    /* background-color: #e3dc9529;;
+    
+    backdrop-filter: blur(5px); */
     
 }
 
@@ -11484,6 +11488,130 @@ body{
 }
 
 
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+} */
+
+.article-body{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    min-height: 100vh;
+    background: linear-gradient(45deg, #ffaf00, #bb02ff);
+    background-attachment: fixed;
+}
+
+.article{
+    position: relative;
+    /* width: 1150px; */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.article .card-article{
+    position: relative;
+    width: 400px;
+    height: 550px;
+    background: #fff;
+    margin: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    transition: 0.50s;
+
+}
+.article:hover .card-article{
+    filter: blur(20px);
+    transform: scale(0.9);
+    opacity: 0.5;
+}
+
+.article .card-article:hover{
+    filter: blur(0);
+    transform: scale(1.1);
+    opacity: 1;
+    }
+
+.article .card-article .circle{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/segnaposto.png');
+    background-position: 50% -50%;
+    -webkit-clip-path: circle(220px at center 0);
+            clip-path: circle(220px at center 0);
+    text-align: center;
+}
+
+.article .card-article .circle h2{
+    color:#fff;
+    font-size: 4.5em;
+    padding: 30px 0;
+
+}
+
+.article .card-article .dettagli{
+    position: absolute;
+    bottom: 30px;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.article .card-article .dettagli p{
+    color: rgb(47, 46, 46);
+    font-weight: bold
+    ;
+}
+
+.btn-presto{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px ;
+    background: linear-gradient(45deg, #ffaf00, #bb02ff);
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    
+    
+}
+.presto-search{
+    
+    padding: 10px 20px ;
+    
+    color: #fff;
+    border-radius: 40px;
+    
+    
+    
+}
+
+/* .article .card-article:nth-child(1) .circle, 
+.article .card-article:nth-child(1) .dettagli a{
+
+background:#ffaf00;
+
+}
+
+.article .card-article:nth-child(2) .circle, 
+.article .card-article:nth-child(2) .dettagli a{
+
+background:#e753f5;
+
+}
+
+.article .card-article:nth-child(3) .circle, 
+.article .card-article:nth-child(3) .dettagli a{
+
+background:#17f1a9;
+
+} */
 
 
 

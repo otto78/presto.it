@@ -1,9 +1,9 @@
 <x-layout>
 
-    @if ($article)
     <div class="container margin-top">
         <div class="row justify-content">
-            <div class="col-md-12">
+            @if ($article)
+            <div class="col-9">
                 <div class="card">
                     <div class="card-header">
                         <h2>Annuncio # {{$article->id}}</h2>
@@ -48,29 +48,32 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row justify-content-mt-5">
-            <div class="col-md-6">
-                <form action="{{route('revisor.reject', ['id'=>$article->id])}}" method="post">
-                @csrf
-                    @method('put')
-                    <button type="submit" class="btn btn-presto">Rifiuta</button>
+            <div class="col-3">
+                <form class="my-2" action="{{route('revisor.reject', ['id'=>$article->id])}}" method="post">
+                    @csrf
+                        @method('put')
+                        <button type="submit" class="btn btn-presto">Rifiuta</button>
+                </form>
+                <form class="my-2" action="{{route('revisor.accept', ['id'=>$article->id])}}" method="post">
+                    @csrf
+                        @method('put')
+                        <button type="submit" class="btn btn-presto">Accetta</button>
+                </form>
+                
+                <form class="my-5" action="{{route('revisor.indexReject', compact('article'))}}" method="get">
+                    @csrf        
+                        <button type="submit" class="btn btn-presto">Rivaluta</button>
                 </form>
             </div>
-            <div class="col-md-6 text-right">
-                <form action="{{route('revisor.accept', ['id'=>$article->id])}}" method="post">
-                @csrf
-                    @method('put')
-                    <button type="submit" class="btn btn-presto">Accetta</button>
-                </form>
-            </div>
         </div>
+        
     </div>
 
     @else 
     <div>Non ci sono articoli, torna più tardi</div>
 
     @endif
+
     <form class="my-5" action="{{route('revisor.indexReject', compact('article'))}}" method="get">
         @csrf        
             <button type="submit" class="btn btn-presto">Rivaluta</button>

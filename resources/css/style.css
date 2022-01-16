@@ -16,6 +16,7 @@ body{
 
 .masthead{
     height: 100vh;
+    
     background-image: url("/img/masthead.png");
     background-size: cover;
     background-position: center;
@@ -46,12 +47,12 @@ body{
     background-color: var(--white)!important;
 }
 
-.btn-presto{
+/* .btn-presto{
     width:100%;
     color: var(--giallo);
     background-color:var(--black);
     border-color:var(--giallo) ;
-}
+} */
 
 .btn-presto-category{
     width:100%;
@@ -65,14 +66,19 @@ body{
 }
 
 .presto-action{
-    display: flex;
+    
     flex-direction: column;
     justify-content: center;
     border-radius: 10px;
-    height: 40%;
-    background-color: #e3dc9529;;
+    height: 250px;
+    width: 250px;
     
-    backdrop-filter: blur(5px);
+    
+    transform: translate(15px, -15px);
+    
+    /* background-color: #e3dc9529;;
+    
+    backdrop-filter: blur(5px); */
     
 }
 
