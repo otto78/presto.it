@@ -1,22 +1,21 @@
 .category{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    min-height: 100vh;
+    min-height: 100vh; 
     display:flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     /* background-color: #212121; */
 }
 
 /* CARD PER CATEGORIE */
 
 
-.box{
+.boxs{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    width: 1200px;
-    margin: 0 auto;
+    /* width: 1200px; */
+   
 
 }
 
@@ -100,7 +99,7 @@
 
 }
 
-.card .deatals h2 span{
+.card .deatals h2 span a{
     font-weight: 500;
     font-size: 16px;
     color: #f38695;

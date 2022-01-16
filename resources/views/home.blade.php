@@ -1,137 +1,149 @@
 <x-layout>
-
+    
     @if (session('access.denied.reviso.only'))
     <div class="alert alert-danger">
         Non sei un revisore - Ehhh Volevi!
     </div>
     @endif
-
-<section class="">
-    <div class="container-fluid">
-        <div class="row masthead justify-content-start align-items-center">
-            <div class="col-6 ms-5 px-5 presto-action shadow">
-                
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt neque possimus id dolore voluptatibus consequuntur!</p>
-                
-                <a href="{{route('article.create')}}" class="btn btn-presto"><strong>Inserisci il tuo annuncio</strong></a>
+    
+    <section class="">
+        <div class="container-fluid">
+            <div class="row masthead justify-content-start align-items-center">
+                <div class="col-6 ms-5 px-5 presto-action shadow">
+                    
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt neque possimus id dolore voluptatibus consequuntur!</p>
+                    
+                    <a href="{{route('article.create')}}" class="btn btn-presto"><strong>Inserisci il tuo annuncio</strong></a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="">
-    <div class="container-fluid">
-        <div class="row section-2 justify-content-start align-items-center">
-            <div class="col-12 my-2">
-                <h2 class="text-center">Categorie</h2>
+    </section>
+    
+    <section class="">
+        <div class="container-fluid">
+            <div class="row section-2 justify-content-start align-items-center">
+                <div class="col-12 my-2">
+                    <h2 class="text-center">Categorie</h2>
+                </div>
+                {{-- Card Category --}}
+                <div class="col-12 mx-auto d-flex flex-wrap category">
+                    @foreach ($categories as $category)
+                    <div class="boxs">
+                        <div class="card">
+                            <div class="imgbox">
+                                <img src="img/segnaposto.png" alt="">
+                            </div>
+                            <div class="deatals">
+                                <h2>{{ $category->category,$category->id}}</h2>
+                                <span>
+                                    <a href="{{route('article.articlesByCategory',[
+                                    $category->category,
+                                    $category->id,
+                                    ])}}">Scopri di più</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>                        
             </div>
-                                        {{-- Card Category --}}
-                                        <div class="col-12 mx-auto d-flex flex-wrap justify-content-evenly">
-                                            @foreach ($categories as $category)
-                                                    <div class="my-2 shadow " style="width: 18rem;">
-                                                        <img src="/img/segnaposto.png" class="img-fluid rounded" alt="Foto segnaposto">
-                                                        <div class="d-flex justify-content-center">
-                                                          {{-- <h5 class="card-title">{{$category->category}}</h5> --}}
-                                                          
-                                                            <a href="{{route('article.articlesByCategory',[
-                                                            $category->category,
-                                                            $category->id,
-                                                            ])}}" class="btn btn-presto-category mt-2">{{$category->category}}</a>
-                                                        </div>
-                                                      </div>
-                                            @endforeach
-                                        </div>                        
         </div>
-    </div>
-
-</section>
-{{-- Articoli --}}
-<section>
-    <div class="container-fluid">
-        <div class="row section-3 justify-content-start align-items-center">
-            <div class="col-12 my-2">
-                <h2 class="text-center">Ultimi articoli</h2>
-            </div>
-                                        
-                                            {{-- Card article --}}
-                                        <div class="col-12 mx-auto my-4 d-flex flex-wrap justify-content-evenly">
-                                            @foreach ($articles as $article)
-                                                    <div class="card" style="width: 18rem;">
-                                                        <img src="/img/segnaposto.png" class="card-img-top" alt="Foto segnaposto">
-                                                        <div class="card-body">
-                                                          <h5 class="card-title">{{$article->title}}</h5>
-                                                          
-                                                          @foreach ($article->categories as $category)
-                                                          
-                                                          <p class="card-subtitle"><a href="{{route('article.articlesByCategory',[
-                                                            $category->category,
-                                                            $category->id,
-                                                            ])}}" class="clicca mt-2">{{$category->category}}</a></p>
-                                                          <br>
-                                                        
-                                                          @endforeach
-                                                          <p class="card-text">{{\Str::limit($article->description, 80)}}</p>
-                                                          <p class="card-text">{{$article->price}} €</p>
-                                                          <p class="card-text">Inserito da: <a class ="clicca" href="{{--{{route('article.articlesByUser', $article->user->id)}}--}}">{{$article->user->name}}</a></p>
-                                                          
-                                                          <p class="card-text">Inserito il: {{$article->created_at->format('d/m/Y')}}</p>
+        
+    </section>
+    {{-- Articoli --}}
+    <section>
+        <div class="container-fluid">
+            <div class="row section-3 justify-content-start align-items-center">
+                <div class="col-12 my-2">
+                    <h2 class="text-center">Ultimi articoli</h2>
+                </div>
                 
-                                                          <hr>
-                                                          <a href="{{route('article.show', compact('article'))}}" class="btn btn-presto">Dettagli</a>
-                                                        </div>
-                                                      </div>
-                                            @endforeach
-                                        </div>
-
-            
-
-           
-              
-            
-        </div>
-    </div>
-</section>
-
-{{-- Card Category --}}
-<div class="col-12 mx-auto d-flex flex-wrap justify-content-evenly">
-    @foreach ($categories as $category)
+                {{-- Card article --}}
+                <div class="col-12 mx-auto my-4 d-flex flex-wrap justify-content-evenly ">
+                    @foreach ($articles as $article)
+                    <div class="card" style="width: 18rem;">
+                        <img src="/img/segnaposto.png" class="card-img-top" alt="Foto segnaposto">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$article->title}}</h5>
+                            
+                            @foreach ($article->categories as $category)
+                            
+                            <p class="card-subtitle"><a href="{{route('article.articlesByCategory',[
+                                $category->category,
+                                $category->id,
+                                ])}}" class="clicca mt-2">{{$category->category}}</a></p>
+                                <br>
+                                
+                                @endforeach
+                                <p class="card-text">{{\Str::limit($article->description, 80)}}</p>
+                                <p class="card-text">{{$article->price}} €</p>
+                                <p class="card-text">Inserito da: <a class ="clicca" href="{{--{{route('article.articlesByUser', $article->user->id)}}--}}">{{$article->user->name}}</a></p>
+                                
+                                <p class="card-text">Inserito il: {{$article->created_at->format('d/m/Y')}}</p>
+                                
+                                <hr>
+                                <a href="{{route('article.show', compact('article'))}}" class="btn btn-presto">Dettagli</a>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </section>
+        
+        {{-- Card Category --}}
+        <div class="col-12 mx-auto d-flex flex-wrap justify-content-evenly">
+            @foreach ($categories as $category)
             <div class="my-2 shadow " style="width: 18rem;">
                 <img src="/img/segnaposto.png" class="img-fluid rounded" alt="Foto segnaposto">
                 <div class="d-flex justify-content-center">
-                  {{-- <h5 class="card-title">{{$category->category}}</h5> --}}
-                  
+                    {{-- <h5 class="card-title">{{$category->category}}</h5> --}}
+                    
                     <a href="{{route('article.articlesByCategory',[
                     $category->category,
                     $category->id,
                     ])}}" class="btn btn-presto-category mt-2">{{$category->category}}</a>
                 </div>
-              </div>
-    @endforeach
-</div> 
-
-<div class="container category">
-@foreach ($categories as $category)
-    <div class="box">
-        <div class="card">
-            <div class="imgbox">
-                <img src="img/segnaposto.png" alt="">
             </div>
-            <div class="deatals">
-                <a href="{{route('article.articlesByCategory',[
-                    $category->category,
-                    $category->id,
-                    ])}}" class="btn btn-presto-category mt-2 ">{{$category->category}}</a>
-                {{-- <h2>Nome Categoria 1<br><span>Scopri di più</span></h2> --}}
+            @endforeach
+        </div> 
+        
+        <div class="container category">
+            @foreach ($categories as $category)
+            <div class="box">
+                <div class="card">
+                    <div class="imgbox">
+                        <img src="img/segnaposto.png" alt="">
+                    </div>
+                    <div class="deatals">
+                        <h2>{{ $category->category,$category->id}}</h2>
+                        <span>
+                            <a href="{{route('article.articlesByCategory',[
+                            $category->category,
+                            $category->id,
+                            ])}}">Scopri di più</a>
+                        </span>
+                    </div>
+                </div>
             </div>
+            @endforeach
         </div>
-    </div>
-    @endforeach
-</div>
-
-
-
-
-
-
-    
-</x-layout>
+        
+        {{-- <a href="{{route('article.articlesByCategory',[
+        $category->category,
+        $category->id,
+        ])}}" class="btn btn-presto-category mt-2 ">{{$category->category}}</a> --}}
+        {{-- <h2>Nome Categoria 1<br><span>Scopri di più</span></h2> --}}
+        
+        
+        
+        
+        
+        
+    </x-layout>
