@@ -9,6 +9,10 @@
 <body>
     <h1>Grazie per averci contattato {{$user_contact['user']}}</h1>
     <h2>Questa è la tua candidatura</h2>
+    <hr>
     <p>{{$user_contact ['message']}}.</p>
+    <hr>
+    <p>Ti contatteremo appena verrà valutata!</p>
+    <p>Presto.it Team</p>
 </body>
 </html>

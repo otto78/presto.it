@@ -16,8 +16,10 @@
                         <h3>Non ci sta nulla</h3>
                     
                     @endif
+
                     
-                    <h1 class=" text-center mb-5" >Categoria: {{$category->category}}</h1>
+                    
+                    <h1 class=" text-center mb-5" >Annunci di {{$user->name}}</h1>
                     
                     <div class="col-12 mx-auto d-flex flex-wrap justify-content-evenly">
                             @foreach ($articles as $article)
@@ -35,7 +37,7 @@
                                           @endforeach --}}
                                           <p class="card-text">{{\Str::limit($article->description, 80)}}</p>
                                           <p class="card-text">{{$article->price}} €</p>
-                                          <p class="card-text">Inserito da: <a class ="clicca" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a></p>
+                                          <p class="card-text">Inserito da: {{$article->user->name}}</p>
 
                                           <hr>
                                           <a href="{{route('article.show', compact('article'))}}" class="btn btn-presto">Dettagli</a>
@@ -50,7 +52,7 @@
                             @endforeach
                         </div>
                     </div>
-                    {{$articles->links()}}
+                    
             </div>
         </div>
         

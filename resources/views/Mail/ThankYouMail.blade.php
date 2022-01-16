@@ -8,6 +8,10 @@
 </head>
 <body>
     <h1>Grazie per esserti registrato {{$user_contact['user']}} su presto.it </h1>
+    <hr>
+    <h2>Comincia subito a fare affari!</h2>
+    <hr>
+    <p>Presto.it Team</p>
     
 </body>
 </html>

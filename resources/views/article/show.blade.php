@@ -69,7 +69,7 @@
                                     <p >{{$article->description}}</p>
                                     <p >{{$article->price}} €</p>
                                     <p >Inserito il: {{$article->created_at->format('d/m/Y')}}</p>
-                                    <p >Inserito da: {{$article->user->name}}</p>
+                                    <p >Inserito da: <a class ="clicca" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a></p>
                                     
                                     <hr>
                                     <a href="{{URL::previous()}}" class="btn btn-presto my-2">Torna indietro</a>

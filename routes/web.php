@@ -24,6 +24,8 @@ use GuzzleHttp\Middleware;
 Route::get('/', [PublicController::class, 'home'])->name('home');
 Route::get('/search', [PublicController::class, 'search'])->name('search');
 Route::get('/category/{category}/{id}/articles', [PublicController::class, 'articlesByCategory'])->name('article.articlesByCategory');
+Route::get('/article/{user}', [PublicController::class, 'articlesByUser'])->name('article.articlesByUser');
+
 
 //rotta per diventare revisore
 Route::get('/workWithUs', [PublicController::class, 'workWithUs'])->name('revisor.workWithUs')->middleware('auth');
@@ -50,5 +52,8 @@ Route::get('/revisor/indexReject', [RevisorController::class, 'indexReject'])->n
 //rotte user_details
 Route::get('/user_details/profile/', [UserDetailController::class, 'index'])->name('user_details.index');
 
+
+/* Route::get('/article/{user}', [ArticleController::class, 'articlesByAuth'])->name('article.articlesByUser');
+ */
 
 

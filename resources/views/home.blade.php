@@ -62,13 +62,17 @@
                                                           
                                                           @foreach ($article->categories as $category)
                                                           
-                                                          <p class="card-subtitle">{{$category->category}}</p>
+                                                          <p class="card-subtitle"><a href="{{route('article.articlesByCategory',[
+                                                            $category->category,
+                                                            $category->id,
+                                                            ])}}" class="clicca mt-2">{{$category->category}}</a></p>
                                                           <br>
                                                         
                                                           @endforeach
                                                           <p class="card-text">{{\Str::limit($article->description, 80)}}</p>
                                                           <p class="card-text">{{$article->price}} €</p>
-                                                          <p class="card-text">Inserito da: {{$article->user->name}}</p>
+                                                          <p class="card-text">Inserito da: <a class ="clicca" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a></p>
+                                                          
                                                           <p class="card-text">Inserito il: {{$article->created_at->format('d/m/Y')}}</p>
                 
                                                           <hr>

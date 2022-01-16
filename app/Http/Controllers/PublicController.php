@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PublicController extends Controller
 {
@@ -17,6 +19,15 @@ class PublicController extends Controller
         
         return view('article.articlesByCategory', compact('category', 'articles'));
         }
+
+    public function articlesByUser(User $user){
+       
+        $articles=Article::where('user_id', $user->id)->where('is_accepted', true)->get();
+        
+        return view('article.articlesByUser', compact('articles', 'user'));
+    }
+
+
 
     public function search(Request $request){
         $q = $request->input('q');

@@ -1,7 +1,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand img-scale" href="{{route('home')}}"><img src="/img/logo_presto.png" class="img-fluid" alt="logo presto.it"></a>
-      <a class="presto-link" href="{{route('article.index')}}">Ultimi articoli</a>
+      <a class="presto-link" href="{{route('article.index')}}">Annunci</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -49,7 +49,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="{{route('user_details.index')}}">Profilo</a></li>
-                <li><a class="dropdown-item" href="#">I tuoi annunci</a></li>
+                <li><a class="dropdown-item" href="{{-- {{route('article.articlesByUser', $article->user->id)}} --}}">I tuoi annunci</a></li>
                 <li><hr class="dropdown-divider"></li>
                 
                 <li><a class="dropdown-item" href="" onclick = "event.preventDefault(); document.getElementById('form-logout').submit();">Esci</a>

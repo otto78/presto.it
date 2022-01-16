@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Article;
 use App\Models\Category;
 use GuzzleHttp\Psr7\Message;
@@ -138,4 +139,14 @@ class ArticleController extends Controller
         return redirect(route('article.index'))->with('message', 'Hai eliminato correttamente il tuo articolo');
 
     }
+
+
+    
+    public function articlesByAuth(User $user){
+           
+        $articles=Article::where('user_id', Auth::user()->id)->where('is_accepted', true)->get();
+        //dd($articles);
+        return view('article.articlesByUser', compact('articles', 'user'));
+    }
 }
+
