@@ -92,6 +92,46 @@
     </div>
 </section>
 
+{{-- Card Category --}}
+<div class="col-12 mx-auto d-flex flex-wrap justify-content-evenly">
+    @foreach ($categories as $category)
+            <div class="my-2 shadow " style="width: 18rem;">
+                <img src="/img/segnaposto.png" class="img-fluid rounded" alt="Foto segnaposto">
+                <div class="d-flex justify-content-center">
+                  {{-- <h5 class="card-title">{{$category->category}}</h5> --}}
+                  
+                    <a href="{{route('article.articlesByCategory',[
+                    $category->category,
+                    $category->id,
+                    ])}}" class="btn btn-presto-category mt-2">{{$category->category}}</a>
+                </div>
+              </div>
+    @endforeach
+</div> 
+
+<div class="container category">
+@foreach ($categories as $category)
+    <div class="box">
+        <div class="card">
+            <div class="imgbox">
+                <img src="img/segnaposto.png" alt="">
+            </div>
+            <div class="deatals">
+                <a href="{{route('article.articlesByCategory',[
+                    $category->category,
+                    $category->id,
+                    ])}}" class="btn btn-presto-category mt-2 ">{{$category->category}}</a>
+                {{-- <h2>Nome Categoria 1<br><span>Scopri di più</span></h2> --}}
+            </div>
+        </div>
+    </div>
+    @endforeach
+</div>
+
+
+
+
+
 
     
 </x-layout>
