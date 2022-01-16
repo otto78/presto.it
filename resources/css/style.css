@@ -1,7 +1,8 @@
 :root{
-    --bg:#E3DCC2;
+    --bg:#f2f2f2;
     --giallo:#E3DC95;
     --black:#1B2021;
+    --white:#f2f2f2
 
 }
 
@@ -15,9 +16,9 @@ body{
 
 .masthead{
     height: 100vh;
-    background-image: url("https://picsum.photos/seed/picsum/800/500");
+    background-image: url("/img/masthead.png");
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
 }
 
 .section-2{
@@ -39,6 +40,10 @@ body{
 
 .bg-dark{
     background-color: var(--black)!important;
+}
+
+.bg-white{
+    background-color: var(--white)!important;
 }
 
 .btn-presto{
@@ -77,11 +82,11 @@ body{
 
 .presto-link{
     text-decoration: none;
-    color:rgba(255, 255, 255, 0.55)
+    color:rgba(0, 0, 0, 0.55);
 }
 
 .presto-link:hover{
-    color:rgba(255, 255, 255, 0.75)
+    color:rgba(0, 0, 0, 0.699);
 }
 
 .clicca{

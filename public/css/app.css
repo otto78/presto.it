@@ -11285,9 +11285,10 @@ textarea.form-control-lg {
   }
 }
 :root{
-    --bg:#E3DCC2;
+    --bg:#f2f2f2;
     --giallo:#E3DC95;
     --black:#1B2021;
+    --white:#f2f2f2
 
 }
 
@@ -11301,9 +11302,9 @@ body{
 
 .masthead{
     height: 100vh;
-    background-image: url("https://picsum.photos/seed/picsum/800/500");
+    background-image: url("/img/masthead.png");
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
 }
 
 .section-2{
@@ -11325,6 +11326,10 @@ body{
 
 .bg-dark{
     background-color: var(--black)!important;
+}
+
+.bg-white{
+    background-color: var(--white)!important;
 }
 
 .btn-presto{
@@ -11365,11 +11370,11 @@ body{
 
 .presto-link{
     text-decoration: none;
-    color:rgba(255, 255, 255, 0.55)
+    color:rgba(0, 0, 0, 0.55);
 }
 
 .presto-link:hover{
-    color:rgba(255, 255, 255, 0.75)
+    color:rgba(0, 0, 0, 0.699);
 }
 
 .clicca{
@@ -11386,29 +11391,20 @@ body{
 .category{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    min-height: 100vh;
     display:flex;
     justify-content: center;
     align-items: center;
-    /* background-color: #212121; */
+    flex-wrap: wrap; 
+    
 }
 
 /* CARD PER CATEGORIE */
 
 
-.box{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    width: 1200px;
-    margin: 0 auto;
-
-}
-
-.card{
+.cat-card{
     position: relative;
-    width: 300px;
-    height: 350px;
+    width: 200px;
+    height: 220px;
     background-color: #fff;
     margin: 0 auto;
     border-radius: 4px;
@@ -11416,7 +11412,7 @@ body{
 
 }
 
-.card:before, .card:after{
+.cat-card:before, .cat-card:after{
     content: '';
     position: absolute;
     top: 0;
@@ -11429,17 +11425,17 @@ body{
     transition: 0.75s;
 }
 
-.card:hover:after{
+.cat-card:hover:after{
     transform: rotate(10deg);
     box-shadow: 0 2px 20px rgba(0,0,0,0.2);
 }
 
-.card:hover:before{
+.cat-card:hover:before{
     transform: rotate(20deg);
     box-shadow: 0 2px 20px rgba(0,0,0,0.2);
 }
 
-.card .imgbox{
+.cat-card .imgbox{
     position:absolute;
     top: 10px;
     bottom: 10px;
@@ -11451,12 +11447,12 @@ body{
 
 }
 
-.card:hover .imgbox{
+.cat-card:hover .imgbox{
    bottom:80px;
 
 }
 
-.card .imgbox img{
+.cat-card .imgbox img{
     position: absolute;
     top: 0;
     left: 0;
@@ -11467,7 +11463,7 @@ body{
 
 }
 
-.card .deatals{
+.cat-card .deatals{
     position:absolute;
     bottom: 10px;
     left: 10px;
@@ -11476,23 +11472,17 @@ body{
     text-align: center;
 }
 
-.card .deatals h2{
+.cat-card .deatals a{
     margin: 0;
     padding: 0;
-    font-size: 20;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 100;
     color: #777;
     text-transform: uppercase;
+    text-decoration: none;
 
 }
 
-.card .deatals h2 span{
-    font-weight: 500;
-    font-size: 16px;
-    color: #f38695;
-    margin-top: 5px;
-
-}
 
 
 

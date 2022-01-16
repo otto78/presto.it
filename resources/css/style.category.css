@@ -1,28 +1,20 @@
 .category{
     margin: 0;
     padding: 0;
-    min-height: 100vh; 
     display:flex;
     justify-content: center;
-    align-items: center; 
-    /* background-color: #212121; */
+    align-items: center;
+    flex-wrap: wrap; 
+    
 }
 
 /* CARD PER CATEGORIE */
 
 
-.boxs{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    /* width: 1200px; */
-   
-
-}
-
-.card{
+.cat-card{
     position: relative;
-    width: 300px;
-    height: 350px;
+    width: 200px;
+    height: 220px;
     background-color: #fff;
     margin: 0 auto;
     border-radius: 4px;
@@ -30,7 +22,7 @@
 
 }
 
-.card:before, .card:after{
+.cat-card:before, .cat-card:after{
     content: '';
     position: absolute;
     top: 0;
@@ -43,17 +35,17 @@
     transition: 0.75s;
 }
 
-.card:hover:after{
+.cat-card:hover:after{
     transform: rotate(10deg);
     box-shadow: 0 2px 20px rgba(0,0,0,0.2);
 }
 
-.card:hover:before{
+.cat-card:hover:before{
     transform: rotate(20deg);
     box-shadow: 0 2px 20px rgba(0,0,0,0.2);
 }
 
-.card .imgbox{
+.cat-card .imgbox{
     position:absolute;
     top: 10px;
     bottom: 10px;
@@ -65,12 +57,12 @@
 
 }
 
-.card:hover .imgbox{
+.cat-card:hover .imgbox{
    bottom:80px;
 
 }
 
-.card .imgbox img{
+.cat-card .imgbox img{
     position: absolute;
     top: 0;
     left: 0;
@@ -80,7 +72,7 @@
 
 }
 
-.card .deatals{
+.cat-card .deatals{
     position:absolute;
     bottom: 10px;
     left: 10px;
@@ -89,20 +81,14 @@
     text-align: center;
 }
 
-.card .deatals h2{
+.cat-card .deatals a{
     margin: 0;
     padding: 0;
-    font-size: 20;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 100;
     color: #777;
     text-transform: uppercase;
+    text-decoration: none;
 
 }
 
-.card .deatals h2 span a{
-    font-weight: 500;
-    font-size: 16px;
-    color: #f38695;
-    margin-top: 5px;
-
-}
