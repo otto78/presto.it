@@ -25,6 +25,7 @@ class ArticleController extends Controller
     {   
         
         $articles=Article::where('is_accepted', true)->orderBy('created_at','desc')->get();
+
         return view('article.index', compact('articles'));
     }
 
@@ -47,6 +48,7 @@ class ArticleController extends Controller
      */
     public function create()   
     {
+    
         $categories=Category::all();
 
         return view('article.create', compact('categories'));

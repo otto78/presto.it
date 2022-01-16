@@ -18,6 +18,7 @@
         </div>
     </div>
 </section>
+
 <section class="">
     <div class="container-fluid">
         <div class="row section-2 justify-content-start align-items-center">
@@ -71,7 +72,7 @@
                                                           @endforeach
                                                           <p class="card-text">{{\Str::limit($article->description, 80)}}</p>
                                                           <p class="card-text">{{$article->price}} €</p>
-                                                          <p class="card-text">Inserito da: <a class ="clicca" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a></p>
+                                                          <p class="card-text">Inserito da: <a class ="clicca" href="{{--{{route('article.articlesByUser', $article->user->id)}}--}}">{{$article->user->name}}</a></p>
                                                           
                                                           <p class="card-text">Inserito il: {{$article->created_at->format('d/m/Y')}}</p>
                 

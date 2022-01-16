@@ -13,7 +13,9 @@ use GuzzleHttp\Middleware;
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| 
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
@@ -22,7 +24,7 @@ use GuzzleHttp\Middleware;
 Route::get('/', [PublicController::class, 'home'])->name('home');
 Route::get('/search', [PublicController::class, 'search'])->name('search');
 Route::get('/category/{category}/{id}/articles', [PublicController::class, 'articlesByCategory'])->name('article.articlesByCategory');
-Route::get('/article/{user}', [PublicController::class, 'articlesByUser'])->name('article.articlesByUser');
+//Route::get('/article/{user}', [PublicController::class, 'articlesByUser'])->name('article.articlesByUser');
 
 
 //rotta per diventare revisore

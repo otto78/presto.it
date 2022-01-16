@@ -36,7 +36,7 @@
                                           @endforeach
                                           <p class="card-text">{{\Str::limit($article->description, 80)}}</p>
                                           <p class="card-text">{{$article->price}} €</p>
-                                          <p class="card-text">Inserito da: <a class ="clicca" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a></p>
+                                          <p class="card-text">Inserito da: <a class ="clicca" href="{{--{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}--}}</a></p>
 
                                           <hr>
                                           <a href="{{route('article.show', compact('article'))}}" class="btn btn-presto">Dettagli</a>
