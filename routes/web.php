@@ -40,7 +40,10 @@ Route::get('/article/edit/{article}', [ArticleController::class, 'edit'])->name(
 Route::put('/article/update/{article}', [ArticleController::class, 'update'])->name('article.update');
 Route::delete('/article/destroy/{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
 
+
+//rotte per img database
 Route::post('/article/images/upload',[ArticleController::class, 'uploadImage'])->name('article.images.upload');
+Route::delete('/article/images/remove',[ArticleController::class, 'removeImage'])->name('article.images.remove');
 
 
 //rotte per i revisori

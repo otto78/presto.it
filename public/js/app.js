@@ -3232,7 +3232,23 @@ document.addEventListener('DOMContentLoaded', function () {
         params: {
           _token: csrfToken,
           uniqueSecret: uniqueSecret
-        }
+        },
+        addRemoveLinks: true
+      });
+      myDropzone.on("success", function (file, response) {
+        file.serverId = response.id;
+      });
+      myDropzone.on("removedfile", function (file) {
+        $.ajax({
+          type: 'DELETE',
+          url: '/article/images/remove',
+          data: {
+            _token: csrfToken,
+            id: file.serverId,
+            uniqueSecret: uniqueSecret
+          },
+          dataType: 'json'
+        });
       });
     }
   });
@@ -17182,7 +17198,7 @@ var Dropzone = /*#__PURE__*/function (_Emitter) {
         };
 
         mockFile.dataURL = imageUrl;
-        this.createThumbnailFromUrl(mockFile, this.options.thumbnailWidth, this.options.thumbnailHeight, this.options.thumbnailMethod, this.options.fixOrientation, onDone, crossOrigin);
+        this.createThumbnailFromUrl(mockFile, this.options.thumbnailWidth, this.options.thumbnailHeight, this.options.resizeMethod, this.options.fixOrientation, onDone, crossOrigin);
       }
     }
   }, {
@@ -18011,7 +18027,7 @@ var Dropzone = /*#__PURE__*/function (_Emitter) {
 
 
 Dropzone.initClass();
-Dropzone.version = "5.9.3"; // This is a map of options for your different dropzones. Add configurations
+Dropzone.version = "5.9.2"; // This is a map of options for your different dropzones. Add configurations
 // to this object for your different dropzone elemens.
 //
 // Example:
