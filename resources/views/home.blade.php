@@ -33,7 +33,7 @@
                 {{-- Card Category --}}
                 <div class="col-12 category">
                     @foreach ($categories as $category)
-                    <div class="p-3">
+                    <div class="p-5">
                         <div class="cat-card">
                             <div class="imgbox">
                                 <img src="img/segnaposto.png" alt="">

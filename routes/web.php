@@ -53,6 +53,6 @@ Route::get('/revisor/indexReject', [RevisorController::class, 'indexReject'])->n
 Route::get('/user_details/profile/', [UserDetailController::class, 'index'])->name('user_details.index');
 
 
-Route::get('/article/{user}', [ArticleController::class, 'articlesByAuth'])->name('article.articlesByUser');
+Route::get('/article/myarticles', [ArticleController::class, 'articlesByAuth'])->name('article.articlesByUser');
 
 

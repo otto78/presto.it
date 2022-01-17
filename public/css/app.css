@@ -11367,7 +11367,9 @@ body{
     backdrop-filter: blur(5px); */
     
 }
-
+.bagde{
+color: #666;
+}
 .margin-top{
     margin-top: 100px;
 }
@@ -11407,8 +11409,9 @@ body{
 
 .cat-card{
     position: relative;
-    width: 200px;
-    height: 220px;
+    width: 270px;
+    height: 290px;
+    background: linear-gradient(#ffaf00, #bb02ff);
     background-color: #fff;
     margin: 0 auto;
     border-radius: 4px;
@@ -11430,13 +11433,16 @@ body{
 }
 
 .cat-card:hover:after{
-    transform: rotate(10deg);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    transform: rotate(15deg);
+    background: linear-gradient(45deg, rgb(252, 185, 40), rgb(194, 35, 252));
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
+
 .cat-card:hover:before{
-    transform: rotate(20deg);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    transform: rotate(30deg);
+    background: linear-gradient(135deg, rgb(255, 212, 120), rgb(215, 106, 255));
+    box-shadow: 0 2px 20px rgba(0,0,0,0.6);
 }
 
 .cat-card .imgbox{
@@ -11445,7 +11451,7 @@ body{
     bottom: 10px;
     left: 10px;
     right: 10px;
-    background-color: rgb(221, 84, 84);
+    background-color: rgb(255, 255, 255);
     transition: 0.75s;
     z-index: 1;
 
@@ -11472,16 +11478,16 @@ body{
     bottom: 10px;
     left: 10px;
     right: 10px;
-    height: 60px;
+    height: 50px;
     text-align: center;
 }
 
 .cat-card .deatals a{
     margin: 0;
     padding: 0;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 100;
-    color: #777;
+    color: rgb(255, 255, 255);
     text-transform: uppercase;
     text-decoration: none;
 

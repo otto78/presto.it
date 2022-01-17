@@ -81,7 +81,9 @@ body{
     backdrop-filter: blur(5px); */
     
 }
-
+.bagde{
+color: #666;
+}
 .margin-top{
     margin-top: 100px;
 }
