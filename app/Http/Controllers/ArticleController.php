@@ -80,6 +80,19 @@ class ArticleController extends Controller
             
         $uniqueSecret = $request->input('uniqueSecret');
         
+        $images = session()->get('images.{$uniqueSecret}');
+        foreach ($images as $image) {
+            $i = new ArticleImage();
+            $fileName = basename($image);
+            $file = Storage::move($image, "/public/articles/{$article->id}/{$fileName}");
+            //in origine {$a->id}
+            $i->file = $file;
+            $i->article_id = $article->id;
+            $i->save();
+
+        }
+
+        File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
 
         return redirect(route('article.index'))->with('message', "L'annuncio è stato inserito correntamente!");
     }
@@ -87,7 +100,12 @@ class ArticleController extends Controller
 
         public function uploadImage(Request $request){
 
-            dd('ciao a tutti');
+            // dd('ciao a tutti');
+            $uniqueSecret = $request->input('uniqueSecret');
+            $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
+            session()->push("images.{$uniqueSecret}", $fileName);
+
+            return response()->json(session()->get("images.{$uniqueSecret}"));
         }
 
 

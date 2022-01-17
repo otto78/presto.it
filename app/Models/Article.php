@@ -49,4 +49,7 @@ class Article extends Model
         return $array;
     }
     
+    public function images(){
+        return $this->hasMany(ArticleImage::class);
+    }
 }
