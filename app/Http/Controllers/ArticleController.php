@@ -57,9 +57,12 @@ class ArticleController extends Controller
         *
         * @return \Illuminate\Http\Response
         */
-        public function create()   
+        public function create(Request $request)   
         {
-            $uniqueSecret=base_convert(sha1(uniqid(mt_rand())),16,36);
+            $uniqueSecret = $request->old(
+                'uniqueSecret',
+                base_convert(sha1(uniqid(mt_rand())),16,36));
+            
             $categories=Category::all();
             
             return view('article.create', compact('categories', 'uniqueSecret'));
@@ -83,8 +86,11 @@ class ArticleController extends Controller
             $article->categories()->sync($request->categories);
             
             $uniqueSecret = $request->input('uniqueSecret');
-            
-            $images = session()->get("images.{$uniqueSecret}");
+            $images = session()->get("images.{$uniqueSecret}", []);
+            $removedImages= session()->get("removedimages.{$uniqueSecret}", []);
+
+            $images = array_diff($images, $removedImages);
+
             foreach ($images as $image) {
                 $i = new ArticleImage();
 
@@ -107,7 +113,7 @@ class ArticleController extends Controller
         
         public function uploadImage(Request $request)
         {
-            // dd('ciao a tutti');
+            
             $uniqueSecret = $request->input('uniqueSecret');
             $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
             session()->push("images.{$uniqueSecret}", $fileName);
@@ -120,6 +126,17 @@ class ArticleController extends Controller
         }
         
         
+        public function removeImage(Request $request)
+        {
+            $uniqueSecret = $request ->input('uniqueSecret');
+            $fileName = $request->input('id');
+            session()->push("removedimages.{$uniqueSecret}", $fileName);
+            Storage::delete($fileName);
+
+            return response()->json('ok');
+
+        }
+
         /**
         * Display the specified resource.
         *
