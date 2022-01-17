@@ -11,7 +11,7 @@
 
             <div class="input-group">
               <input class="presto-search" type="search" name='q' placeholder="Cerca..." aria-label="Search" class="form-control" aria-describedby="button-search">
-              <button class="btn btn-presto" type="submit"><i class="fas fa-search"></i></button>
+              <button class="btn-presto" type="submit"><i class="fas fa-search"></i></button>
             </div>
         </form>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -53,7 +53,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="{{route('user_details.index')}}">Profilo</a></li>
-                <li><a class="dropdown-item" href="{{--{{route('article.articlesByUser', $article->user->id)}}--}}">I tuoi annunci</a></li>
+                {{-- <li><a class="dropdown-item" href=" {{route('article.articlesByUser', $article->user->id)}}">I tuoi annunci</a></li> --}}
                 <li><hr class="dropdown-divider"></li>
                 
                 <li><a class="dropdown-item" href="" onclick = "event.preventDefault(); document.getElementById('form-logout').submit();">Esci</a>

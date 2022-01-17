@@ -40,8 +40,8 @@
                                           <p class="card-text">Inserito da: {{$article->user->name}}</p>
 
                                           <hr>
-                                          <a href="{{route('article.show', compact('article'))}}" class="btn btn-presto">Dettagli</a>
-                                          <a href="{{URL::previous()}}" class="btn btn-presto my-2">Torna indietro</a>
+                                          <a href="{{route('article.show', compact('article'))}}" class=" btn-presto">Dettagli</a>
+                                          <a href="{{URL::previous()}}" class="btn-presto my-2">Torna indietro</a>
                                           {{-- <a href="{{route('article.articlesByCategory',[
                                               $articles->category->category,
                                               $articles->category->id,

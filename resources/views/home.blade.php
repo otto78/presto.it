@@ -15,7 +15,7 @@
                     <p class="text-center">Ogni oggetto ha una storia, raccontala e dagli valore!</p>
                     <br>
                     
-                    <a href="{{route('article.create')}}" class="btn btn-presto"><strong>Inserisci il tuo annuncio</strong></a>
+                    <a href="{{route('article.create')}}" class="btn-presto"><strong>Inserisci il tuo annuncio</strong></a>
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
                             </span>
                             <span><a class="clicca" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a></span> 
                         </p>
-                        <a href="{{route('article.show', compact('article'))}}" class="btn btn-presto shadow">Dettagli</a>
+                        <a href="{{route('article.show', compact('article'))}}" class="btn-presto shadow">Dettagli</a>
                     </div>
                 </div>                                      
                 @endforeach
