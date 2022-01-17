@@ -9,39 +9,40 @@
                         <h2>Annuncio # {{$article->id}}</h2>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-2"><h3>Utente</h3></div>
-                                <div class="col-md-10">
-                                    {{$article->user->id}},
-                                    {{$article->user->name}},
-                                    {{$article->user->email}}
+                                <div class="col-md-3"><h3>Utente</h3></div>
+                                <div class="col-md-9">
+                                    <p>Id: {{$article->user->id}}</p>
+                                    <p>Nome: {{$article->user->name}}</p>   
+                                    <p>Email: {{$article->user->email}}</p> 
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
-                                <div class="col-md-2"><h3>Titolo</h3></div>
-                                <div class="col-md-10">{{$article->title}}</div>
+                                <div class="col-md-3"><h3>Titolo</h3></div>
+                                <div class="col-md-9">{{$article->title}}</div>
                             </div>
                             <hr>
                             <div class="row">
-                                <div class="col-md-2"><h3>Descrizione</h3></div>
-                                <div class="col-md-10">{{$article->description}}</div>
+                                <div class="col-md-3"><h3>Descrizione</h3></div>
+                                <div class="col-md-9">{{$article->description}}</div>
                             </div>
                             <hr>
                             <div class="row">
-                                <div class="col-md-2"><h3>Immagini</h3></div>
-                                <div class="col-md-10">
+                                <div class="col-md-3"><h3>Immagini</h3></div>
+                                <div class="col-md-9">
 
                                     @foreach($article->images as $image)
-                                        <div class="row md-2">
+                                        <div class="row md-2 my-4">
                                             <div class="col-md-4">
                                                 <img 
-                                                    src="{{Storage::url($image->file)}}" class="rounded" alt="">
+                                                    src="{{Storage::url($image->file)}}" class="rounded shadow img-fluid" alt="">
                                             </div>
                                             <div class="col-md-8">
-                                                {{$image->id}} <br>
-                                                {{$image->file}} <br>
-                                                {{Storage::url($image->file)}} <br>
+                                                <p>Id Immagine: {{$image->id}}</p>
+                                                <p>Percorso pubblico: {{$image->file}}</p>
+                                                <p>Percorso Server: {{Storage::url($image->file)}}</p>                                                               
                                             </div>
+                                            <hr>
                                         </div>
                                     @endforeach                                    
                                     
@@ -55,17 +56,17 @@
                 <form class="my-2" action="{{route('revisor.reject', ['id'=>$article->id])}}" method="post">
                     @csrf
                         @method('put')
-                        <button type="submit" class="btn btn-presto">Rifiuta</button>
+                        <button type="submit" class="btn-presto">Rifiuta</button>
                 </form>
                 <form class="my-2" action="{{route('revisor.accept', ['id'=>$article->id])}}" method="post">
                     @csrf
                         @method('put')
-                        <button type="submit" class="btn btn-presto">Accetta</button>
+                        <button type="submit" class="btn-presto">Accetta</button>
                 </form>
                 
                 <form class="my-5" action="{{route('revisor.indexReject', compact('article'))}}" method="get">
                     @csrf        
-                        <button type="submit" class="btn btn-presto">Rivaluta</button>
+                        <button type="submit" class="btn-presto">Rivaluta</button>
                 </form>
             </div>
         </div>
@@ -79,7 +80,7 @@
 
     <form class="my-5" action="{{route('revisor.indexReject', compact('article'))}}" method="get">
         @csrf        
-            <button type="submit" class="btn btn-presto">Rivaluta</button>
+            <button type="submit" class="btn-presto">Rivaluta</button>
         </form>
 
    

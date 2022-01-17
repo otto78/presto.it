@@ -21,7 +21,13 @@
                         <div class="col-12 mx-auto d-flex flex-wrap justify-content-evenly">
                             @foreach ($articles as $article)
                                     <div class="card my-3" style="width: 18rem;">
-                                        <img src="/img/segnaposto.png" class="card-img-top" alt="Foto segnaposto">
+                                        @foreach ($article->images as $image)
+                                            @if($article->images->first()==$image)
+                                            <img src="{{Storage::url($image->file)}}" class="card-img-top" alt="Foto segnaposto">      
+                                            @endif 
+                                            
+                                        
+                                        @endforeach
                                         <div class="card-body">
                                           <h5 class="card-title">{{$article->title}}</h5>
                                           
@@ -39,7 +45,7 @@
                                           <p class="card-text">Inserito da: <a class ="clicca" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a></p>
 
                                           <hr>
-                                          <a href="{{route('article.show', compact('article'))}}" class="btn btn-presto">Dettagli</a>
+                                          <a href="{{route('article.show', compact('article'))}}" class="btn-presto">Dettagli</a>
                                         </div>
                                       </div>
                             @endforeach
