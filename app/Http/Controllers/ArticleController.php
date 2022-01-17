@@ -84,6 +84,13 @@ class ArticleController extends Controller
         return redirect(route('article.index'))->with('message', "L'annuncio è stato inserito correntamente!");
     }
 
+
+        public function uploadImage(Request $request){
+
+            dd('ciao a tutti');
+        }
+
+
     /**
      * Display the specified resource.
      *

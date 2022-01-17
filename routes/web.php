@@ -40,6 +40,8 @@ Route::get('/article/edit/{article}', [ArticleController::class, 'edit'])->name(
 Route::put('/article/update/{article}', [ArticleController::class, 'update'])->name('article.update');
 Route::delete('/article/destroy/{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
 
+Route::post('/article/images/upload',[ArticleController::class, 'uploadImage'])->name('article.images.upload');
+
 
 //rotte per i revisori
 Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');

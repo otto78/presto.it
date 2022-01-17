@@ -27,9 +27,13 @@
                       <input type="text" value="{{old('title')}}" name="title" class="form-control" id="inputTitle">
                     </div>
                     <div class="col-12">
+
                       <label for="drophere" class="form-label">Inserisci l'immagine dell'articolo</label>
                       <div class="dropzone" id="drophere"></div>
+
+                      
                       {{-- <input type="file" disabled value="{{old('img')}}" name="image" class="form-control" id="inputImg"> --}}
+                    
                     </div>
                     <div class="col-12">
                       <label for="inputDescription" class="form-label">Inserisci qui la descrizione del tuo articolo</label>
