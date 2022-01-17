@@ -17,6 +17,11 @@
             <div class="my-4">
                 <form enctype="multipart/form-data" method="POST" action="{{route('article.store')}}" class="row g-3">
                     @csrf
+
+                    <h3>DEBUG:: SECRET CODE {{$uniqueSecret}}</h3>
+                    <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
+
+
                     <div class="col-12">
                       <label for="inputTitle" class="form-label">Inserisci qui il titolo del tuo articolo</label>
                       <input type="text" value="{{old('title')}}" name="title" class="form-control" id="inputTitle">

@@ -30,6 +30,13 @@ class ArticleController extends Controller
     }
 
 
+    // public function newArticle(){
+
+    //     $uniqueSecret=base_convert(sha1(uniqid(mt_rand())),16,36);
+    //     return view()
+
+    // }
+
     /* Funzione che fa vedere gli articoli rifiutati 
 
     public function indexReject()
@@ -48,10 +55,10 @@ class ArticleController extends Controller
      */
     public function create()   
     {
-    
+        $uniqueSecret=base_convert(sha1(uniqid(mt_rand())),16,36);
         $categories=Category::all();
 
-        return view('article.create', compact('categories'));
+        return view('article.create', compact('categories', 'uniqueSecret'));
     }
 
     /**
@@ -67,11 +74,12 @@ class ArticleController extends Controller
             'title' => $request->title, 
             'description' => $request->description,
             'price'=> $request->price,
+            'uniqueSecret'=>$request->uniqueSecret,
             'user_id'=>Auth::id(),
         ]);
-
+        dd($article);
         $article->categories()->sync($request->categories);
-
+            
         return redirect(route('article.index'))->with('message', "L'annuncio è stato inserito correntamente!");
     }
 
