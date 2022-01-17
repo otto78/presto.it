@@ -74,12 +74,13 @@ class ArticleController extends Controller
             'title' => $request->title, 
             'description' => $request->description,
             'price'=> $request->price,
-            'uniqueSecret'=>$request->uniqueSecret,
             'user_id'=>Auth::id(),
         ]);
-        dd($article);
         $article->categories()->sync($request->categories);
             
+        $uniqueSecret = $request->input('uniqueSecret');
+        
+
         return redirect(route('article.index'))->with('message', "L'annuncio è stato inserito correntamente!");
     }
 

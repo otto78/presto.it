@@ -2,4 +2,9 @@ require('bootstrap');
 
 require('./script');
 
-window.$=require('jquery');
+window.$=window.jQuery=require('jquery');
+
+document.Dropzone=require('dropzone');
+Dropzone.autoDiscover=false;
+
+require('./articleImages');
