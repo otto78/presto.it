@@ -30,18 +30,21 @@
                             <div class="row">
                                 <div class="col-md-2"><h3>Immagini</h3></div>
                                 <div class="col-md-10">
-                                    <div class="row mb-2">
-                                        <div class="col-md-2">
-                                            <img src="/img/segnaposto.png" class="immg-fluid" alt="segnaposto">
+
+                                    @foreach($article->images as $image)
+                                        <div class="row md-2">
+                                            <div class="col-md-4">
+                                                <img 
+                                                    src="{{Storage::url($image->file)}}" class="rounded" alt="">
+                                            </div>
+                                            <div class="col-md-8">
+                                                {{$image->id}} <br>
+                                                {{$image->file}} <br>
+                                                {{Storage::url($image->file)}} <br>
+                                            </div>
                                         </div>
-                                        <div class="col-md-10">... ... ... </div>
-                                    </div>
-                                    <div class="row mb-2">
-                                        <div class="col-md-2">
-                                            <img src="/img/segnaposto.png" class="immg-fluid" alt="segnaposto">
-                                        </div>
-                                        <div class="col-md-10">... ... ... </div>
-                                    </div>
+                                    @endforeach                                    
+                                    
                                 </div>
                             </div>
                         </div>

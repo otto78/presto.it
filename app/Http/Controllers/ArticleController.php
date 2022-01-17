@@ -95,7 +95,7 @@ class ArticleController extends Controller
                 $i = new ArticleImage();
 
                 $fileName = basename($image);
-                $newFileName="/public/articles/{$article->id}/{$fileName}";
+                $newFileName="public/articles/{$article->id}/{$fileName}";
                 Storage::move($image, $newFileName);
                 //in origine {$a->id}
 
@@ -135,6 +135,27 @@ class ArticleController extends Controller
 
             return response()->json('ok');
 
+        }
+
+        public function getImage(Request $request)
+        {
+            $uniqueSecret = $request ->input('uniqueSecret');
+
+            $images = session()->get("images.{$uniqueSecret}", []);
+            $removedImages= session()->get("removedimages.{$uniqueSecret}", []);
+
+            $images = array_diff($images, $removedImages);
+
+            $data = [];
+
+            foreach($images as $image){
+                $data[] = [
+                    'id'=> $image,
+                    'src'=> Storage::url($image)
+                ];
+            }
+
+            return response()->json($data);
         }
 
         /**

@@ -3233,7 +3233,25 @@ document.addEventListener('DOMContentLoaded', function () {
           _token: csrfToken,
           uniqueSecret: uniqueSecret
         },
-        addRemoveLinks: true
+        addRemoveLinks: true,
+        init: function init() {
+          $.ajax({
+            type: 'GET',
+            url: '/article/images',
+            data: {
+              uniqueSecret: uniqueSecret
+            },
+            dataType: 'json'
+          }).done(function (data) {
+            $.each(data, function (key, value) {
+              var file = {
+                serverId: value.id
+              };
+              myDropzone.options.addedfile.call(myDropzone, file);
+              myDropzone.options.thumbnail.call(myDropzone, file, value.src);
+            });
+          });
+        }
       });
       myDropzone.on("success", function (file, response) {
         file.serverId = response.id;
@@ -17198,7 +17216,7 @@ var Dropzone = /*#__PURE__*/function (_Emitter) {
         };
 
         mockFile.dataURL = imageUrl;
-        this.createThumbnailFromUrl(mockFile, this.options.thumbnailWidth, this.options.thumbnailHeight, this.options.resizeMethod, this.options.fixOrientation, onDone, crossOrigin);
+        this.createThumbnailFromUrl(mockFile, this.options.thumbnailWidth, this.options.thumbnailHeight, this.options.thumbnailMethod, this.options.fixOrientation, onDone, crossOrigin);
       }
     }
   }, {
@@ -18027,7 +18045,7 @@ var Dropzone = /*#__PURE__*/function (_Emitter) {
 
 
 Dropzone.initClass();
-Dropzone.version = "5.9.2"; // This is a map of options for your different dropzones. Add configurations
+Dropzone.version = "5.9.3"; // This is a map of options for your different dropzones. Add configurations
 // to this object for your different dropzone elemens.
 //
 // Example:

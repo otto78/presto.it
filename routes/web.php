@@ -44,6 +44,8 @@ Route::delete('/article/destroy/{article}', [ArticleController::class, 'destroy'
 //rotte per img database
 Route::post('/article/images/upload',[ArticleController::class, 'uploadImage'])->name('article.images.upload');
 Route::delete('/article/images/remove',[ArticleController::class, 'removeImage'])->name('article.images.remove');
+Route::get('/article/images',[ArticleController::class, 'getImage'])->name('article.images');
+
 
 
 //rotte per i revisori
