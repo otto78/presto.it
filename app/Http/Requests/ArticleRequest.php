@@ -26,6 +26,7 @@ class ArticleRequest extends FormRequest
         return [
             'title'=> 'required|min:5|max:20',
             'description'=> 'required|min:50',
+            //eventuale reogla per la storia
             'price' =>'required|numeric'
             
         ];

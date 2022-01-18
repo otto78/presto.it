@@ -82,6 +82,7 @@ class ArticleController extends Controller
             $article=Article::create([
                 'title' => $request->title, 
                 'description' => $request->description,
+                'story'=> $request->story,
                 'price'=> $request->price,
                 'user_id'=>Auth::id(),
             ]);

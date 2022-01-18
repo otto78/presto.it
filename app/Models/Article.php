@@ -18,6 +18,7 @@ class Article extends Model
     protected $fillable=[
         'title',
         'description',
+        'story',
         'price',
         'user_id',
     ];
@@ -40,8 +41,9 @@ class Article extends Model
         
         $array=[
             'id'=> $this->id,
-            'title'=> $this->title,
+            'title'=> $this->title,            
             'description'=> $this->description,
+            'story'=> $this->story,
             'price'=> $this->price,
             'category'=> $categorie,
             
