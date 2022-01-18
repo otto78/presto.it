@@ -76,13 +76,17 @@
                         <h4>{{$article->title}}</h4>
                         <h5>{{$article->price}} €</h5>                            
                         <p class="mt-3">{{\Str::limit($article->description, 80)}}</p>                           
-                        <p class="d-flex justify-content-between mx-3">
+                        <p> Categoria: 
                             <span>
                                 @foreach ($article->categories as $category)           
                                 <a class="clicca-qui" href="{{route('article.articlesByCategory',[$category->category, $category->id])}}">{{$category->category}}</a>                               
                                 @endforeach                                 
                             </span>
-                            <span><a class="clicca-qui" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a></span> 
+                        </p>
+                        <p> Inserito da: 
+                            <span>
+                                <a class="clicca-qui" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a>
+                            </span> 
                         </p>
                         <a href="{{route('article.show', compact('article'))}}" class="btn-presto shadow">Dettagli</a>
                     </div>

@@ -3,7 +3,7 @@
     <div class="container-fluid margin-top bg-login">
         <div class="row justify-content-center">
             @if ($article)
-                <div class="col-8 margin-top">
+                <div class="col-12 col-lg-8 margin-top">
                     <div class="card shadow">
 
                         <div class="card-header py-5">
@@ -96,7 +96,7 @@
         @else
 
         <div class="row justify-content-center">
-            <div class="col-8 ">
+            <div class="col-12 col-lg-8">
                 
                 <div class="my-5 text-center">Non ci sono articoli, torna più tardi</div>
         

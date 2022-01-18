@@ -11778,6 +11778,10 @@ color: #666;
 button{
     outline:none
 }
+
+.bg-chiaro{
+    background-color: #fff;
+}
 .category{
     margin: 0;
     padding: 0;

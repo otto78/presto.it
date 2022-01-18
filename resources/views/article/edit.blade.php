@@ -9,10 +9,15 @@
         </div>
     @endif
 
-<div class="container margin-top">
+<div class="container-fluid margin-top bg-login">
+  <div class="row">
+    <div class="col-12-col-md-8">
+      <h1 class="text-center my-5">Modifica un annuncio in pochi istanti</h1>
+    </div>
+  </div>
 
-    <div class="row justify-content-center align-items-center shadow">
-        <div class="col-12">
+    <div class="row justify-content-center align-items-center ">
+        <div class="col-12 col-lg-8 shadow bg-chiaro p-4 my-4">
             
                 <form enctype="multipart/form-data" method="POST" action="{{route('article.update', compact('article'))}}" class="row g-3 my-4">
                     @csrf
@@ -46,29 +51,40 @@
                         <label for="inputPrice" class="form-label">Modifica qui il prezzo</label>
                         <input type="text" value="{{$article->price}}" name="price" class="form-control" id="inputPrice">
                     </div>
-                    <form method="post" action="{{route('article.edit', compact('article'))}}">
-                      @csrf
-                      @method('put')
-                      <button type="submit" class="btn btn-presto">Modifica</button>
-                      </form>
-                    {{-- <div class="col-6">
-                      <button type="submit" class="btn btn-presto">Modifica</button>
-                    </div> --}}
+                        <div class="row py-5">
+
+                        
+                              {{-- Pulsante modifica --}}
+                              <div class="col-4">
+                                  <form method="post" action="{{route('article.edit', compact('article'))}}">
+                                      @csrf
+                                      @method('put')
+                                        <button type="submit" class="btn-presto">Modifica</button>
+                                  </form>
+                              </div>
+                                                              
+                              {{-- Pulsante elimina --}}
+                              <div class="col-4">
+                                  <form method="post" action="{{route('article.destroy', compact('article'))}}">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn-presto">Cancella</button>
+                                  </form>
+                              </div>
+
+                              {{-- Pulsante torna indietro --}}
+                              <div class="col-4">
+                                  <a href="{{route('article.show', compact('article'))}}" class="btn-presto">Torna indietro</a>
+                                </div>
+
+
+                            
+                              
+                        
+                          </div>
+                          </div>
                   </form>
-                  <div class="col-6 mb-4">
-                      <form method="post" action="{{route('article.destroy', compact('article'))}}">
-                      @csrf
-                      @method('delete')
-                      <button type="submit" class="btn btn-presto">Cancella</button>
-                      </form>
-                  <div class="col-12 mt-4">
-                    <a href="{{route('article.show', compact('article'))}}" class="btn btn-presto">Torna indietro</a>
-                  </div>
-                </div>
-                  
-            
-        </div>
-    </div>
+      </div>
 
 
 

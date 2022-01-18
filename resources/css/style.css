@@ -127,3 +127,7 @@ color: #666;
 button{
     outline:none
 }
+
+.bg-chiaro{
+    background-color: #fff;
+}
