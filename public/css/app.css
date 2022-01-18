@@ -11668,7 +11668,7 @@ body{
 .masthead{
     height: 100vh;
     
-    background-image: url("/img/masthead.png");
+    background-image: url("/img/masthead-trasparente.png"), linear-gradient(45deg, #ffaf00, #bb02ff);
     background-size: cover;
     background-position: center;
 }
@@ -11750,14 +11750,33 @@ color: #666;
 
 .clicca{
     color: #2b2e2e;
-    text-decoration: none;
-    
-    
+    text-decoration: none;  
 }
 
 .clicca:hover{
-    color: var(--black);
-    
+    color: var(--black);    
+}
+
+.clicca-qui{
+    color: #176e6e;
+    text-decoration: none;  
+}
+
+.clicca-qui:hover{
+    color: #47a5a5;
+    text-decoration: none;  
+}
+
+
+.bg-login{
+    min-height: 100vh;
+    background: linear-gradient(45deg, #ffaf00, #bb02ff);
+    background-attachment: fixed;
+}
+
+
+button{
+    outline:none
 }
 .category{
     margin: 0;
@@ -11913,8 +11932,8 @@ color: #666;
 
 .article .card-article{
     position: relative;
-    width: 400px;
-    height: 550px;
+    width: 300px;
+    height: 500px;
     background: #fff;
     margin: 20px;
     border-radius: 20px;
@@ -11977,15 +11996,30 @@ color: #666;
     text-decoration: none;
     text-align: center;
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+    outline: none;
 
 }
+
+.btn-presto:hover{
+    color: rgb(47, 46, 46);
+    transition: 0.2s;
+}
+
+.btn-presto:visited{
+    outline: none;
+}
+.btn-presto:active{
+    outline: none;
+}
+
+
 .presto-search{
     
     padding: 10px 20px ;
     
-    color: #fff;
+    color: rgb(47, 46, 46);
     border-radius: 40px;
-    
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
     
     
 }
@@ -12010,6 +12044,13 @@ background:#e753f5;
 background:#17f1a9;
 
 } */
+
+
+.img-presto-card{
+    max-width: 100%;
+    height:auto;
+    
+}
 
 
 

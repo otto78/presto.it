@@ -17,7 +17,7 @@ body{
 .masthead{
     height: 100vh;
     
-    background-image: url("/img/masthead.png");
+    background-image: url("/img/masthead-trasparente.png"), linear-gradient(45deg, #ffaf00, #bb02ff);
     background-size: cover;
     background-position: center;
 }
@@ -99,12 +99,31 @@ color: #666;
 
 .clicca{
     color: #2b2e2e;
-    text-decoration: none;
-    
-    
+    text-decoration: none;  
 }
 
 .clicca:hover{
-    color: var(--black);
-    
+    color: var(--black);    
+}
+
+.clicca-qui{
+    color: #176e6e;
+    text-decoration: none;  
+}
+
+.clicca-qui:hover{
+    color: #47a5a5;
+    text-decoration: none;  
+}
+
+
+.bg-login{
+    min-height: 100vh;
+    background: linear-gradient(45deg, #ffaf00, #bb02ff);
+    background-attachment: fixed;
+}
+
+
+button{
+    outline:none
 }

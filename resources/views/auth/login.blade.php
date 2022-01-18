@@ -11,9 +11,9 @@
 @endif
 
 
-<div class="container ">
+<div class="container-fluid bg-login">
     <div class="row section-2 justify-content-center align-items-center">
-        <div class="col-12 col-md-6 card shadow p-5">
+        <div class="col-12 col-md-6 card shadow p-5" data-aos="zoom-in-up">
 
             <form method="post" action="{{route('login')}}">
                 @csrf
@@ -25,9 +25,9 @@
                   <label for="exampleInputPassword1" class="form-label">Password</label>
                   <input type="password" name="password" class="form-control" id="InputPassword1">
                 </div>
-                <button type="submit" class="btn btn-presto">Accedi</button>
+                <button type="submit" class="btn-presto">Accedi</button>
               </form>
-              <p class="mt-3 ">Se non sei registrato <span><a class="clicca" href="{{route('register')}}">clicca qui</a></span></p>
+              <p class="mt-3 ">Se non sei registrato <span><a class="clicca-qui" href="{{route('register')}}">clicca qui</a></span></p>
         </div>
     </div>
 </div>

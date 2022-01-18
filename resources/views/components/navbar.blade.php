@@ -10,7 +10,7 @@
             
 
             <div class="input-group">
-              <input class="presto-search" type="search" name='q' placeholder="Cerca..." aria-label="Search" class="form-control" aria-describedby="button-search">
+              <input class="presto-search form-control" type="search" name='q' placeholder="Cerca..." aria-label="Search" aria-describedby="button-search">
               <button class="btn-presto" type="submit"><i class="fas fa-search"></i></button>
             </div>
         </form>

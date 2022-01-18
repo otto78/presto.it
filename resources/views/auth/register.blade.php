@@ -10,9 +10,9 @@
     </div>
 @endif
 
-<div class="container">
+<div class="container-fluid bg-login">
     <div class="row section-2 justify-content-center align-items-center">
-        <div class="col-12 col-md-6 card shadow p-5">
+        <div class="col-12 col-md-6 card shadow p-5" data-aos="zoom-in-up">
 
             <form method="post" action="{{route('register')}}">
                 @csrf
@@ -33,7 +33,7 @@
                     <label for="exampleInputPasswordConfirmation" class="form-label">Conferma la password</label>
                     <input type="password" name="password_confirmation" class="form-control" id="InputPasswordConfirmation">
                   </div>
-                <button type="submit" class="btn btn-presto">Registrati</button>
+                <button type="submit" class="btn-presto">Registrati</button>
               </form>
         </div>
     </div>

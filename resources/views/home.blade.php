@@ -64,19 +64,25 @@
                 @foreach ($articles as $article)                        
                 <div class="card-article">
                     <div class="circle">
-                        {{-- immagine da gestire --}}
+                        
+                        @foreach ($article->images as $image)
+                            @if($article->images->first()==$image)
+                                <img src="{{Storage::url($image->file)}}" class="img-presto-card" alt="Foto segnaposto">      
+                            @endif                                                                             
+                        @endforeach
+
                     </div>
                     <div class="dettagli">
-                        <h2>{{$article->title}}</h2>
+                        <h4>{{$article->title}}</h4>
                         <h5>{{$article->price}} €</h5>                            
                         <p class="mt-3">{{\Str::limit($article->description, 80)}}</p>                           
                         <p class="d-flex justify-content-between mx-3">
                             <span>
                                 @foreach ($article->categories as $category)           
-                                <a class="clicca" href="{{route('article.articlesByCategory',[$category->category, $category->id])}}">{{$category->category}}</a>                               
+                                <a class="clicca-qui" href="{{route('article.articlesByCategory',[$category->category, $category->id])}}">{{$category->category}}</a>                               
                                 @endforeach                                 
                             </span>
-                            <span><a class="clicca" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a></span> 
+                            <span><a class="clicca-qui" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a></span> 
                         </p>
                         <a href="{{route('article.show', compact('article'))}}" class="btn-presto shadow">Dettagli</a>
                     </div>

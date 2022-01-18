@@ -23,10 +23,8 @@
                                     <div class="card my-3" style="width: 18rem;">
                                         @foreach ($article->images as $image)
                                             @if($article->images->first()==$image)
-                                            <img src="{{Storage::url($image->file)}}" class="card-img-top" alt="Foto segnaposto">      
-                                            @endif 
-                                            
-                                        
+                                                <img src="{{Storage::url($image->file)}}" class="card-img-top" alt="Foto segnaposto">      
+                                            @endif                                                                             
                                         @endforeach
                                         <div class="card-body">
                                           <h5 class="card-title">{{$article->title}}</h5>
