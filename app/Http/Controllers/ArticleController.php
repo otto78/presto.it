@@ -11,6 +11,7 @@ use GuzzleHttp\Psr7\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use App\Http\Requests\ArticleRequest;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -75,7 +76,7 @@ class ArticleController extends Controller
         * @param  \Illuminate\Http\Request  $request
         * @return \Illuminate\Http\Response
         */
-        public function store(Request $request)
+        public function store(ArticleRequest $request)
         {   
             
             $article=Article::create([

@@ -1,4 +1,7 @@
 <x-layout>
+  
+  <div class="container margin-top">
+    <h1 class="text-center">Inserisci un annuncio in pochi istanti</h1>
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -8,10 +11,7 @@
             </ul>
         </div>
     @endif
-
-<div class="container margin-top">
-    <h1 class="text-center">Inserisci un annuncio in pochi istanti</h1>
-
+    
     <div class="row justify-content-center align-items-center shadow">
         <div class="col-12 ">
             <div class="my-4">
