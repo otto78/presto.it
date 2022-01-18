@@ -23,8 +23,18 @@
                             </div>
                             <hr>
                             <div class="row">
+                                <div class="col-md-3"><h3>Prezzo</h3></div>
+                                <div class="col-md-9">{{$article->price}} €</div>
+                            </div>
+                            <hr>
+                            <div class="row">
                                 <div class="col-md-3"><h3>Descrizione</h3></div>
                                 <div class="col-md-9">{{$article->description}}</div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3"><h3>Storia</h3></div>
+                                <div class="col-md-9">{{$article->story}}</div>
                             </div>
                             <hr>
                             <div class="row">
@@ -35,14 +45,14 @@
                                         <div class="row md-2 my-4">
                                             <div class="col-md-4">
                                                 <img 
-                                                    src="{{Storage::url($image->file)}}" class="rounded shadow img-fluid" alt="">
+                                                    src="{{$image->getUrl(600, 600)}}" class="rounded shadow img-fluid m-2" alt="">
                                             </div>
-                                            <div class="col-md-8">
+                                            {{-- <div class="col-md-8">
                                                 <p>Id Immagine: {{$image->id}}</p>
                                                 <p>Percorso pubblico: {{$image->file}}</p>
                                                 <p>Percorso Server: {{Storage::url($image->file)}}</p>                                                               
-                                            </div>
-                                            <hr>
+                                            </div> --}}
+                                            
                                         </div>
                                     @endforeach                                    
                                     

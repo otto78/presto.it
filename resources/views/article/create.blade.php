@@ -40,6 +40,10 @@
                       <textarea name="description" id="inputDescription" class="form-control">{{old('description')}}</textarea>
                     </div>
                     <div class="col-12">
+                      <label for="inputStory" class="form-label">Inserisci qui la storia del tuo articolo</label>
+                      <textarea name="story" id="inputStory" class="form-control">{{old('story')}}</textarea>
+                    </div>
+                    <div class="col-12">
                       <label for="inputCategory" class="form-label">Scegli la categoria scegliendone una qui sotto</label>
                       <select id="inputCategory" name="categories[]" class="form-control">
                         {{-- <option selected>Scegli...</option> --}}
