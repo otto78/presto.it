@@ -72,11 +72,11 @@
                                     <p >Inserito da: <a class ="clicca" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a></p>
                                     
                                     <hr>
-                                    <a href="{{route('article.index')}}" class="btn btn-presto my-2">Torna indietro</a>
+                                    <a href="{{route('article.index')}}" class="btn-presto my-2">Torna indietro</a>
                                     
                                     @if  ($article->user->id==Auth::id())
                                         
-                                    <a href="{{route('article.edit', compact('article'))}}" class="btn btn-presto my-2">Modifica</a>
+                                    <a href="{{route('article.edit', compact('article'))}}" class="btn-presto my-2">Modifica</a>
                                         
                                     @endif
                                 </div>
