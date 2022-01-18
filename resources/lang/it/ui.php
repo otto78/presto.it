@@ -37,6 +37,7 @@ return[
     'Password' => 'Password',
     'Non condividere la tua password con nessuno' 
     => 'Non condividere la tua password con nessuno',
+
     'Conferma la password' => 'Conferma la password',
     'Registrati' => 'Registrati',
 
@@ -44,6 +45,48 @@ return[
     'Tutti gli annunci' => 'Tutti gli annunci',
     'Non ci sta nulla' => 'Non ci sta nulla',
     'Dettagli' => 'Dettagli',
+
+    //Article.create
+    'Inserisci un annuncio in pochi istanti' =>
+    'Inserisci un annuncio in pochi istanti',
+
+    'Inserisci qui il titolo del tuo annuncio' =>
+    'Inserisci qui il titolo del tuo annuncio',
+
+    "Inserisci una o più immagini" => 
+    "Inserisci una o più immagini",
+    
+    "Inserisci qui la descrizione del tuo articolo" =>
+    "Inserisci qui la descrizione del tuo articolo",
+
+    'Inserisci qui la storia del tuo articolo' =>
+    'Inserisci qui la storia del tuo articolo',
+
+    "Inserisci la categoria scegliendone una qui sotto" =>
+    "Inserisci la categoria scegliendone una qui sotto",
+
+    "Inserisci qui il prezzo" => "Inserisci qui il prezzo",
+    'Crea' => 'Crea',
+
+    //article.show
+    'Torna indietro' => 'Torna indietro',
+    'Modifica' => 'Modifica',
+
+    //article.edit
+    'Modifica il titolo del tuo annuncio' => 
+    'Modifica il titolo del tuo annuncio',
+
+    'Modifica la descrizione del tuo articolo' =>
+    'Modifica la descrizione del tuo articolo',
+
+    "Cambia le immagini dell'annuncio" =>
+    "Cambia le immagini dell'annuncio",
+
+    'Cambia la categoria' => 'Cambia la categoria',
+    'Modifica qui il prezzo' => 'Modifica qui il prezzo',
+    'Salva' => 'Salva',
+    'Elimina' => 'Elimina',
+    'Torna indietro' => 'Torna indietro',
 
 
 ];

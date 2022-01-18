@@ -2,7 +2,7 @@
     
     <section class="article-body">        
         <div class="container-fluid margin-top">
-            <h1 class="text-center">Tutti gli articoli</h1>
+            <h1 class="text-center">{{__('ui.Tutti gli annunci')}}</h1>
             
             @if (session('message'))
             <div class="alert alert-success">
@@ -15,7 +15,7 @@
                     <div class="col-12">
                         @if (count($articles)==0)
                         
-                        <h3>Non ci sta nulla</h3>
+                        <h3>{{__('ui.Non ci sta nulla')}}</h3>
                         
                         @endif
                         
@@ -44,7 +44,7 @@
                                         </span>
                                         <span><a class="clicca-qui" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a></span> 
                                     </p>
-                                    <a href="{{route('article.show', compact('article'))}}" class="btn-presto shadow">Dettagli</a>
+                                    <a href="{{route('article.show', compact('article'))}}" class="btn-presto shadow">{{__('ui.Dettagli')}}</a>
                                 </div>
                             </div>                                      
                             @endforeach

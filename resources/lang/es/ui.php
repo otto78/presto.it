@@ -35,8 +35,9 @@ return[
     //Form Register
     'Nome e cognome' => 'Nome y cognome',
     'Password' => 'Contraseña',
-    'Non condividere la tua password con nessuno' 
-    => 'No comparta su contraseña con nadie',
+    'Non condividere la tua password con nessuno' => 
+    'No comparta su contraseña con nadie',
+
     'Conferma la password' => 'Confirmar contraseña',
     'Registrati' => 'Registrarse',
 
@@ -44,5 +45,50 @@ return[
     'Tutti gli annunci' => 'Todos los anuncios',
     'Non ci sta nulla' => 'No hay nada',
     'Dettagli' => 'Detalles',
+
+    //Article.create
+    'Inserisci un annuncio in pochi istanti' =>
+    'Publica un anuncio en segundos',
+
+    'Inserisci qui il titolo del tuo annuncio' =>
+    'Ingrese el título de su anuncio aquí',
+
+    "Inserisci una o più immagini" => 
+    "Insertar una o más imágenes",
+    
+    "Inserisci qui la descrizione del tuo articolo" =>
+    "Ingrese la descripción de su artículo aquí",
+
+    'Inserisci qui la storia del tuo articolo' =>
+    'Ingresela historia de su artículo aquí',
+
+    "inserisci la categoria scegliendone una qui sotto" =>
+    "ingrese la categoría eligiendo una a continuación",
+
+    "Inserisci qui il prezzo" => 
+    "Ingrese el precio aquí",
+
+    'Crea' => 'Crea',
+
+    //article.show
+    
+    'Torna indietro' => 'Regresar',
+    'Modifica' => 'Modificación',
+
+    //article.edit
+    'Modifica il titolo del tuo annuncio' => 
+    'Edita el título de tu anuncio',
+
+    'Modifica la descrizione del tuo articolo' =>
+    'Edita la descripción de tu artículo',
+
+    "Cambia le immagini dell'annuncio" =>
+    "Cambia las imágenes de tu anuncio",
+
+    'Cambia la categoria' => 'Editar la categoría',
+    'Modifica qui il prezzo' => 'Cambia el precio aquí',
+    'Salva' => 'Guarda',
+    'Elimina' => 'Eliminar',
+    'Torna indietro' => 'Regresar',
 
 ];

@@ -15,8 +15,4 @@ yarn-error.log
 /.vscode
 /storage/*.index
 /storage/articles.index-shm
-<<<<<<< HEAD
 /storage/articles.index-wal
-=======
-/storage/articles.index-wal
->>>>>>> 80142427ee773ba1b0c58f32f46efe84a29f0243
