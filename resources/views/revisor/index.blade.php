@@ -101,7 +101,7 @@
                 <div class="my-5 text-center">Non ci sono articoli, torna più tardi</div>
         
                 {{-- Pulsante rivaluta --}}
-                <form class="my-5 text-center" action="{{route('revisor.indexReject', compact('article'))}}" method="get">
+                <form class="my-5 text-center" action="{{route('revisor.indexReject')}}" method="get">
                     @csrf        
                         <button type="submit" class="btn-presto"><i class="fas fa-trash-alt fa-2x"></i></button>
                 </form>

@@ -1,4 +1,5 @@
-<x-layout>
+ 
+<x-layout> 
     
     <div class="container margin-top">
         <h1 class="text-center">Tutti gli articoli da rivalutare</h1>
@@ -12,14 +13,15 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    {{-- @if (count($articles)==0)
-                        
-                        <h3>Non ci sta nulla</h3>
-                        
-                        @endif --}}
-                        
+                   
+                    @if ($articles)
+                    
+                        <h3>{{__('ui.Non ci sta nulla')}}</h3>
+                    
+                    @endif
+
                         <div class="col-12 mx-auto d-flex flex-wrap justify-content-evenly">
-                            @foreach ($articles as $article)
+                        @foreach ($articles as $article)
                             <div class="card my-3" style="width: 18rem;">
                                 @foreach ($article->images as $image)
                                     @if($article->images->first()==$image) 
@@ -47,18 +49,16 @@
                                         <button type="submit" class="btn-presto">Rivaluta</button>
                                     </form>
                                     
+                                    </div>
                                 </div>
-                            </div>
                             @endforeach
                             <form class="my-5" action="{{route('revisor.index', compact('article'))}}" method="get">
                                 @csrf                                
                                 <button type="submit" class="btn-presto">Torna indietro</button>
                             </form>
-                            {{-- <form class="my-5" action="{{route('revisor.indexReject', compact('article'))}}" method="get">
-                                @csrf                                
-                                <button type="submit" class="btn btn-presto">Torna indietro</button>
-                            </form> --}}
+                           
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -67,4 +67,3 @@
         </div>
         
     </x-layout>
-    

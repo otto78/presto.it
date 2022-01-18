@@ -51,7 +51,7 @@
                         <label for="inputPrice" class="form-label">{{__('ui.Modifica qui il prezzo')}}</label>
                         <input type="text" value="{{$article->price}}" name="price" class="form-control" id="inputPrice">
                     </div>
-                        <div class="row py-5">
+                        <div class="row py-5 justify-content-between">
 
                         
                               {{-- Pulsante modifica --}}
@@ -64,7 +64,7 @@
                               </div>
                                                               
                               {{-- Pulsante elimina --}}
-                              <div class="col-4">
+                              <div class="col-4 d-flex justify-content-center">
                                   <form method="post" action="{{route('article.destroy', compact('article'))}}">
                                     @csrf
                                     @method('delete')
@@ -73,7 +73,7 @@
                               </div>
 
                               {{-- Pulsante torna indietro --}}
-                              <div class="col-4">
+                              <div class="col-4 d-flex justify-content-end">
                                   <a href="{{route('article.show', compact('article'))}}" class="btn-presto">Torna indietro</a>
                                 </div>
 
