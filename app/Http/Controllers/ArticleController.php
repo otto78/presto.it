@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Article;
 use App\Models\Category;
+use App\Jobs\ResizeImage;
 use App\Models\ArticleImage;
 use GuzzleHttp\Psr7\Message;
 use Illuminate\Http\Request;
@@ -103,6 +104,12 @@ class ArticleController extends Controller
                     $newFileName,
                     300, 300
                 ));
+
+                //Secondo Dispach da capire come usare
+                dispatch(new ResizeImage(
+                    $newFileName,
+                    600, 600
+                ));
                 
 
                 $i->file = $newFileName;
@@ -122,8 +129,18 @@ class ArticleController extends Controller
             
             $uniqueSecret = $request->input('uniqueSecret');
             $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
+            
+
+            /* dimensioni thumbnial dropzone */
+            dispatch(new ResizeImage(
+                $fileName,
+                120, 120
+            ));
+            
             session()->push("images.{$uniqueSecret}", $fileName);
             
+
+
             return response()->json(
                     [
                     'id'=> $fileName
@@ -157,7 +174,7 @@ class ArticleController extends Controller
             foreach($images as $image){
                 $data[] = [
                     'id'=> $image,
-                    'src'=> Storage::url($image)
+                    'src'=> ArticleImage::getUrlByFilePath($image, 120,120)
                 ];
             }
 

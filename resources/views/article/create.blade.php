@@ -18,7 +18,7 @@
                 <form enctype="multipart/form-data" method="POST" action="{{route('article.store')}}" class="row g-3">
                     @csrf
 
-                    <h3>DEBUG:: SECRET CODE {{$uniqueSecret}}</h3>
+                    
                     <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
 
 
