@@ -97,7 +97,13 @@ class ArticleController extends Controller
                 $fileName = basename($image);
                 $newFileName="public/articles/{$article->id}/{$fileName}";
                 Storage::move($image, $newFileName);
-                //in origine {$a->id}
+
+                //Dimensione immagine croppata
+                dispatch(new ResizeImage(
+                    $newFileName,
+                    300, 300
+                ));
+                
 
                 $i->file = $newFileName;
                 $i->article_id = $article->id;
