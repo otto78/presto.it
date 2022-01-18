@@ -39,4 +39,13 @@ class PublicController extends Controller
     public function workWithUs(){
         return view('revisor.workWithUs');
     }
+
+    public function locale($locale)
+    {
+        session()->put('locale', $locale);
+        return redirect()->back();
+    }
+
+
+
 }

@@ -24,7 +24,7 @@ use GuzzleHttp\Middleware;
 Route::get('/', [PublicController::class, 'home'])->name('home');
 Route::get('/search', [PublicController::class, 'search'])->name('search');
 Route::get('/category/{category}/{id}/articles', [PublicController::class, 'articlesByCategory'])->name('article.articlesByCategory');
-
+Route::post('/locale/{locale}', [PublicController::class, 'locale'])->name('locale');
 
 
 //rotta per diventare revisore
