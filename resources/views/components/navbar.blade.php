@@ -2,6 +2,12 @@
     <div class="container-fluid">
       <a class="navbar-brand img-scale" href="{{route('home')}}"><img src="/img/presto_scritta.png" class="img-fluid" alt="logo presto.it"></a>
       <a class="presto-link" href="{{route('article.index')}}">Annunci</a>
+
+      {{-- link lingue --}}
+      <a class="presto-link" href=""><span class="flag-icon flag-icon-it mx-2"></span></a>
+      <a class="presto-link" href=""><span class="flag-icon flag-icon-gb mx-2"></span></a>
+      <a class="presto-link" href=""><span class="flag-icon flag-icon-es mx-2"></span></a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
