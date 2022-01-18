@@ -17,7 +17,7 @@
             <form method="post" action="{{route('register')}}">
                 @csrf
                 <div class="mb-3">
-                  <label for="exampleInputName" class="form-label">Nome e cognome</label>
+                  <label for="exampleInputName" class="form-label">{{__('ui.Nome e cognome')}}</label>
                   <input type="text" name="name" class="form-control" id="InputName" aria-describedby="nameHelp">
                 </div>
                 <div class="mb-3">
@@ -25,15 +25,15 @@
                     <input type="email" name="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">     
                   </div>
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <label for="exampleInputPassword1" class="form-label">{{__('ui.Password')}}</label>
                   <input type="password" name="password" class="form-control" id="InputPassword1">
-                  <div id="exampleInputPassword1" class="form-text">Non condivedere la tua password con nessuno</div>
+                  <div id="exampleInputPassword1" class="form-text">{{__('ui.Non condividere la tua password con nessuno')}}</div>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPasswordConfirmation" class="form-label">Conferma la password</label>
+                    <label for="exampleInputPasswordConfirmation" class="form-label">{{__('ui.Conferma la password')}}</label>
                     <input type="password" name="password_confirmation" class="form-control" id="InputPasswordConfirmation">
                   </div>
-                <button type="submit" class="btn-presto">Registrati</button>
+                <button type="submit" class="btn-presto">{{__('ui.Registrati')}}</button>
               </form>
         </div>
     </div>
