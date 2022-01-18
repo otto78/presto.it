@@ -2,13 +2,14 @@
 
 {{-- vista risultati ricerca --}}
 
-<div class="container">
+<div class="container-fluid margin-top bg-login">
+    <h2 class="text-center my-5">Risultati ricerca per {{$q}}</h2>
     <div class="row justify-content-center">
         <div class="col-12">
-            <h2>
-                Risultati ricerca per {{$q}}
-            </h2>
             <div class="col-12 mx-auto d-flex flex-wrap justify-content-evenly">
+                @if(count($articles)==0)
+                <div><h2 class="text-center my-10">Non ci sono articoli corrispondenti alla tua ricerca, torna più tardi!</h2></div>
+                @endif
                 @foreach ($articles as $article)
                         <div class="card my-3" style="width: 18rem;">
                             <img src="/img/segnaposto.png" class="card-img-top" alt="Foto segnaposto">
@@ -31,8 +32,7 @@
                           </div>
                 @endforeach
             </div>
-
-
+            
         </div>
 
     </div>

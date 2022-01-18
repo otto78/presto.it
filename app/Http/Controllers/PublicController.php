@@ -31,7 +31,7 @@ class PublicController extends Controller
 
     public function search(Request $request){
         $q = $request->input('q');
-        $articles = Article::search($q)->get();
+        $articles = Article::search($q)->where('is_accepted', true)->get();
 
         return view('search_results', compact('q', 'articles'));
     }
