@@ -2,7 +2,7 @@
     
     @if (session('access.denied.reviso.only'))
         <div class="alert alert-danger">
-            Non sei un revisore - Ehhh Volevi!
+            {{__('ui.Non sei un revisore!')}}
         </div>
     @endif
 
@@ -12,10 +12,10 @@
             <div class="row masthead justify-content-center align-items-center">
                 <div class="col-12 presto-action">
                     <br>
-                    <p class="text-center">Ogni oggetto ha una storia, raccontala e dagli valore!</p>
+                    <p class="text-center">{{__('ui.Ogni oggetto ha una storia, raccontala e dagli valore!')}}</p>
                     <br>
                     
-                    <a href="{{route('article.create')}}" class="btn-presto"><strong>Inserisci il tuo annuncio</strong></a>
+                    <a href="{{route('article.create')}}" class="btn-presto"><strong>{{__('ui.Inserisci il tuo annuncio')}}</strong></a>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 my-5">
-                    <h2 class="text-center">Categorie</h2>
+                    <h2 class="text-center">{{__('ui.Categorie')}}</h2>
                 </div>
             </div>    
                 
@@ -57,7 +57,7 @@
     <section class="article-body">        
         <div class="row">
             <div class="col-12">
-                <h2 class="text-center my-5">Ultimi annunci</h2>
+                <h2 class="text-center my-5">{{__('ui.Ultimi annunci')}}</h2>
             </div>
             {{-- Cards --}}
             <div class="col-12 article">

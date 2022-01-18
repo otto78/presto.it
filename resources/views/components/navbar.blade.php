@@ -43,7 +43,7 @@
             
 
             <div class="input-group ombra-search">
-              <input class="presto-search form-control" type="search" name='q' placeholder="Cerca..." aria-label="Search" aria-describedby="button-search">
+              <input class="presto-search form-control" type="search" name='q' placeholder="{{__('ui.Cerca')}}" aria-label="Search" aria-describedby="button-search">
               <button class="btn-presto-search" type="submit"><i class="fas fa-search"></i></button>
             </div>
         </form>
@@ -63,14 +63,14 @@
             <a class="nav-link" aria-current="page" href="{{route('revisor.workWithUs')}}">{{__('ui.Lavora con noi')}}</a>
           </li>         
           <li class="nav-item ms-auto">
-            <a class="nav-link" aria-current="page" href="{{route('login')}}">Login</a>
+            <a class="nav-link" aria-current="page" href="{{route('login')}}">{{__('ui.Accedi')}}</a>
           </li>
           
           @else
 {{-- if revisor --}}
           @if (Auth::user()->is_revisor)    
           <li class="nav-item">
-            <a class="nav-link" href="{{route('revisor.index')}}">Revisor Home 
+            <a class="nav-link" href="{{route('revisor.index')}}">{{__('ui.Annunci da revisionare')}} 
               <span class="badgee badge-pill badge-warning">{{\App\Models\Article::ToBeRevisionedCount()}}</span> 
             </a>
           </li>
@@ -82,7 +82,7 @@
 {{-- end if revisor --}}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Ciao, {{Auth::user()->name}}
+              {{__('ui.Ciao, ')}} {{Auth::user()->name}}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="{{route('user_details.index')}}">{{__('ui.Profilo')}}</a></li>

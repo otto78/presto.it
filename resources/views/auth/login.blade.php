@@ -22,12 +22,12 @@
                     <input type="email" name="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">     
                   </div>
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <label for="exampleInputPassword1" class="form-label">{{__('ui.Password')}}</label>
                   <input type="password" name="password" class="form-control" id="InputPassword1">
                 </div>
-                <button type="submit" class="btn-presto">Accedi</button>
+                <button type="submit" class="btn-presto">{{__('ui.Accedi')}}</button>
               </form>
-              <p class="mt-3 ">Se non sei registrato <span><a class="clicca-qui" href="{{route('register')}}">clicca qui</a></span></p>
+              <p class="mt-3 ">{{__('ui.Se non sei registrato ')}}<span><a class="clicca-qui" href="{{route('register')}}">{{__('ui.Clicca qui')}}</a></span></p>
         </div>
     </div>
 </div>
