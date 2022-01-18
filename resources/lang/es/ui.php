@@ -28,13 +28,11 @@ return[
 
     //Form login
     'Password' => 'Contraseña',
-    'Accedi' => 'Acceso',
     'Se non sei registrato ' => 'Si no estás registrado ',
     'Clicca qui' => 'Haga clic aquí',
 
     //Form Register
     'Nome e cognome' => 'Nome y cognome',
-    'Password' => 'Contraseña',
     'Non condividere la tua password con nessuno' => 
     'No comparta su contraseña con nadie',
 
@@ -89,6 +87,36 @@ return[
     'Modifica qui il prezzo' => 'Cambia el precio aquí',
     'Salva' => 'Guarda',
     'Elimina' => 'Eliminar',
-    'Torna indietro' => 'Regresar',
+
+    //revisor
+    'Annuncio #'=> 'Anuncio #',
+    'Utente' => 'Útil',
+    'Titolo' => 'Título',
+    'Prezzo' => 'Precio',
+    'Descrizione' => 'Descripción',
+    'Storia' => 'Historia',
+    'Immagini' => 'Imágenes',
+    'Rifiuta' => 'Rifiuta',
+    'Accetta' => 'Acceta',
+    'Rivaluta' => 'Rivaluta',
+
+    //profilo
+    'Altre informazioni' => 'Otra información',
+
+   
+
+
+
+    
+    //messaggi di conferma e di errore
+    "L'annuncio è stato inserito correntamente!" =>
+    "¡El anuncio se colocó con éxito!",
+
+    'Hai modificato correttamente il tuo articolo' =>
+    'Has editado correctamente tu artículo.',
+
+    'Hai eliminato correttamente il tuo articolo' =>
+    'Has eliminado correctamente tu artículo.',
+    
 
 ];

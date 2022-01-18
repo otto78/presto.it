@@ -28,13 +28,11 @@ return[
 
     //Form login
     'Password' => 'Password',
-    'Accedi' => 'Accedi',
     'Se non sei registrato ' => 'Se non sei registrato ',
     'Clicca qui' => 'Clicca qui',
 
     //Form Register
     'Nome e cognome' => 'Nome e cognome',
-    'Password' => 'Password',
     'Non condividere la tua password con nessuno' 
     => 'Non condividere la tua password con nessuno',
 
@@ -86,7 +84,39 @@ return[
     'Modifica qui il prezzo' => 'Modifica qui il prezzo',
     'Salva' => 'Salva',
     'Elimina' => 'Elimina',
-    'Torna indietro' => 'Torna indietro',
+    
+    //revisor
+    'Annuncio #'=> 'Annuncio #',
+    'Utente' => 'Utente',
+    'Titolo' => 'Titolo',
+    'Prezzo' => 'Prezzo',
+    'Descrizione' => 'Descrizione',
+    'Storia' => 'Storia',
+    'Immagini' => 'Immagini',
+    'Rifiuta' => 'Rifiuta',
+    'Accetta' => 'Accetta',
+    'Rivaluta' => 'Rivaluta',
+
+    //profilo
+    'Altre informazioni' => 'Altre informazioni',
+
+    
+    
+    
+
+    //messaggi di conferma e di errore
+    "L'annuncio è stato inserito correntamente!" =>
+    "L'annuncio è stato inserito correntamente!",
+
+    'Hai modificato correttamente il tuo articolo' =>
+    'Hai modificato correttamente il tuo articolo',
+
+    'Hai eliminato correttamente il tuo articolo' =>
+    'Hai eliminato correttamente il tuo articolo',
+
+
+
+
 
 
 ];

@@ -28,13 +28,11 @@ return[
 
     //Form login
     'Password' => 'Password',
-    'Accedi' => 'Login',
     'Se non sei registrato ' => 'If you are not registered ',
     'Clicca qui' => 'Click here',
 
     //Form Register
     'Nome e cognome' => 'Name and Surname',
-    'Password' => 'Password',
     'Non condividere la tua password con nessuno' => 
     'Do not share your password wiyh anyone',
 
@@ -88,6 +86,36 @@ return[
     'Modifica qui il prezzo' => 'Change the price here',
     'Salva' => 'Save',
     'Elimina' => 'Delete',
-    'Torna indietro' => 'Back',
+
+    //revisor
+    'Annuncio #'=> 'Announcement #',
+    'Utente' => 'User Name',
+    'Titolo' => 'Title',
+    'Prezzo' => 'Price',
+    'Descrizione' => 'Description',
+    'Storia' => 'Story',
+    'Immagini' => 'Images',
+    'Rifiuta' => 'Reject',
+    'Accetta' => 'Accept',
+    'Rivaluta' => 'Reconsider',
+
+    //profilo
+    'Altre informazioni' => 'Other informations',
+
+    
+
+
+
+    
+    //messaggi di conferma e di errore
+    "L'annuncio è stato inserito correntamente!" =>
+    "The announcemnt was successfully placed!",
+
+    'Hai modificato correttamente il tuo articolo' =>
+    'You have successfully edited your article',
+
+    'Hai eliminato correttamente il tuo articolo' =>
+    'You have successfully deleted your article',
+
     
 ];

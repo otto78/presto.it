@@ -49,7 +49,7 @@
                     <form method="post" action="{{route('article.edit', compact('article'))}}">
                       @csrf
                       @method('put')
-                      <button type="submit" class="btn btn-presto">{{__('ui.Modifica')}}</button>
+                      <button type="submit" class="btn btn-presto">{{__('ui.Salva')}}</button>
                       </form>
                     {{-- <div class="col-6">
                       <button type="submit" class="btn btn-presto">Modifica</button>
