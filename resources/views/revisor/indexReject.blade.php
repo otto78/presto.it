@@ -36,11 +36,11 @@
                                           <p class="card-text">Inserito da: {{$article->user->name}}</p>
 
                                           <hr>
-                                          <a href="{{route('article.show', compact('article'))}}" class="btn btn-presto">Dettagli</a>
+                                          <a href="{{route('article.show', compact('article'))}}" class="btn-presto">Dettagli</a>
                                           <form class="my-5" action="{{route('revisor.restore', $article->id)}}" method="post">
                                             @csrf
                                             @method('put')
-                                                <button type="submit" class="btn btn-presto">Rivaluta</button>
+                                                <button type="submit" class="btn-presto">Rivaluta</button>
                                             </form>
 
                                         </div>
@@ -48,7 +48,7 @@
                             @endforeach
                             <form class="my-5" action="{{route('revisor.index', compact('article'))}}" method="get">
                                 @csrf                                
-                                <button type="submit" class="btn btn-presto">Torna indietro</button>
+                                <button type="submit" class="btn-presto">Torna indietro</button>
                             </form>
                             {{-- <form class="my-5" action="{{route('revisor.indexReject', compact('article'))}}" method="get">
                                 @csrf                                

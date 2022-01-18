@@ -9,9 +9,9 @@
         <form class="d-flex ms-auto" action="{{route('search')}}" method="get">
             
 
-            <div class="input-group">
+            <div class="input-group ombra-search">
               <input class="presto-search form-control" type="search" name='q' placeholder="Cerca..." aria-label="Search" aria-describedby="button-search">
-              <button class="btn-presto" type="submit"><i class="fas fa-search"></i></button>
+              <button class="btn-presto-search" type="submit"><i class="fas fa-search"></i></button>
             </div>
         </form>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
