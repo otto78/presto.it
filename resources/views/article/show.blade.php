@@ -66,10 +66,11 @@
                                     
                                     @endforeach
                                     
-                                    <p >{{$article->description}}</p>
-                                    <p >{{$article->price}} €</p>
-                                    <p >Inserito il: {{$article->created_at->format('d/m/Y')}}</p>
-                                    <p >Inserito da: <a class ="clicca" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a></p>
+                                    <p>{{$article->description}}</p>
+                                    <p>{{$article->story}}</p>
+                                    <p>{{$article->price}} €</p>
+                                    <p>Inserito il: {{$article->created_at->format('d/m/Y')}}</p>
+                                    <p>Inserito da: <a class ="clicca" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a></p>
                                     
                                     <hr>
                                     <a href="{{route('article.index')}}" class="btn-presto my-2">{{__('ui.Torna indietro')}}</a>

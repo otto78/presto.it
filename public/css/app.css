@@ -11778,6 +11778,10 @@ color: #666;
 button{
     outline:none
 }
+
+.bg-chiaro{
+    background-color: #fff;
+}
 .category{
     margin: 0;
     padding: 0;
@@ -12038,6 +12042,34 @@ button{
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 
+.btn-revisor-accept{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px ;
+    background: linear-gradient(45deg, #008516, #55c26d);
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+.btn-revisor-reject{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px ;
+    background: linear-gradient(45deg, #ff2828, #fa7c7c);
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+.btn-revisor-accept:hover ,.btn-revisor-reject:hover{
+    color: rgb(47, 46, 46);
+    transition: 0.4s;
+}
 /* .article .card-article:nth-child(1) .circle, 
 .article .card-article:nth-child(1) .dettagli a{
 

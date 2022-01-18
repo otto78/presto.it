@@ -1,7 +1,13 @@
 <x-layout>
   
-  <div class="container margin-top">
-    <h1 class="text-center">{{__('ui.Inserisci un annuncio in pochi istanti')}}</h1>
+  <div class="container-fluid margin-top bg-login">
+    <div class="row">
+      <div class="col-12-col-md-8">
+        <h1 class="text-center my-5">Inserisci un annuncio in pochi istanti</h1>
+      </div>
+    </div>
+
+    
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -12,14 +18,14 @@
         </div>
     @endif
     
-    <div class="row justify-content-center align-items-center shadow">
-        <div class="col-12 ">
-            <div class="my-4">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-lg-8 my-4 p-4 bg-chiaro shadow">
+                      
                 <form enctype="multipart/form-data" method="POST" action="{{route('article.store')}}" class="row g-3">
                     @csrf
 
                     
-                    <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
+                      <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
 
 
                     <div class="col-12">
@@ -49,7 +55,7 @@
                         {{-- <option selected>Scegli...</option> --}}
                         @foreach ($categories as $category)
                         
-                        <option value="{{$category->id}}">{{$category->category}}</option>
+                          <option value="{{$category->id}}">{{$category->category}}</option>
                             
                         @endforeach
 
@@ -60,11 +66,11 @@
                       <label for="inputPrice" class="form-label">{{__('ui.Inserisci qui il prezzo')}}</label>
                       <input type="text" value="{{old('price')}}" name="price" class="form-control" id="inputPrice">
                     </div>
-                    <div class="col-6">
-                      <button type="submit" class="btn btn-presto">{{__('ui.Crea')}}</button>
+                    <div class="col-12 d-flex justify-content-center">
+                      <button type="submit" class="btn btn-presto">Aggiungi</button>
                     </div>
                   </form>
-            </div>
+           
         </div>
     </div>
 </div>
