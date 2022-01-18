@@ -1,6 +1,7 @@
 <x-layout>
   
-  <div class="container margin-top">
+  <div class="container-fluid margin-top bg-login">
+    
     <h1 class="text-center">Inserisci un annuncio in pochi istanti</h1>
     @if ($errors->any())
         <div class="alert alert-danger">
