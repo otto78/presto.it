@@ -9,11 +9,12 @@ use App\Jobs\ResizeImage;
 use App\Models\ArticleImage;
 use GuzzleHttp\Psr7\Message;
 use Illuminate\Http\Request;
+use App\Jobs\GoogleVisionLabelImage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\ArticleRequest;
-use App\Jobs\GoogleVisionSafeSearchImage;
 use Illuminate\Support\Facades\Storage;
+use App\Jobs\GoogleVisionSafeSearchImage;
 
 
 class ArticleController extends Controller
@@ -114,6 +115,7 @@ class ArticleController extends Controller
                     600, 600
                 ));
                 
+                
 
                 $i->file = $newFileName;
                 $i->article_id = $article->id;
@@ -121,6 +123,7 @@ class ArticleController extends Controller
                 $i->save();
                 
                 dispatch(new GoogleVisionSafeSearchImage($i->id));
+                dispatch(new GoogleVisionLabelImage($i->id));
             }
             
             File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));

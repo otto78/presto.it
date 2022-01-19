@@ -11,6 +11,10 @@ class ArticleImage extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'labels'=>'array',
+    ];
+
     public function article(){
         return $this->belongsTo(Article::class);
     }

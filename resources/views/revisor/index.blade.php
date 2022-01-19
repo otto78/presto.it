@@ -65,6 +65,14 @@
                                                         <p>medical: {{$image->medical}}</p>
                                                         <p>violence: {{$image->violence}}</p>
                                                         <p>racy: {{$image->racy}}</p>
+                                                        <p>labels:
+                                                            @if($image->labels)
+                                                            @foreach($image->labels as $label)
+                                                            - {{$label}}
+                                                            @endforeach
+                                                            @endif    
+                                                        </p>
+                                                        <hr>
 
                                                         {{-- <p>Percorso pubblico: {{$image->file}}</p>
                                                         <p>Percorso Server: {{Storage::url($image->file)}}</p>       --}}                                                         
