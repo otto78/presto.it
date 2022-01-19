@@ -36,7 +36,7 @@
                     <div class="p-5">
                         <div class="cat-card">
                             <div class="imgbox">
-                                <img src="img/segnaposto.png" alt="">
+                                <img src="{{$category->image}}" alt="">
                             </div>
                             <div class="deatals">
                                 <a href="{{route('article.articlesByCategory',[
