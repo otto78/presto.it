@@ -3,7 +3,7 @@
   <div class="container-fluid margin-top bg-login">
     <div class="row">
       <div class="col-12-col-md-8">
-        <h1 class="text-center my-5">Inserisci un annuncio in pochi istanti</h1>
+        <h1 class="text-center my-5">{{__('ui.Inserisci un annuncio in pochi istanti')}}</h1>
       </div>
     </div>
 
@@ -67,7 +67,7 @@
                       <input type="text" value="{{old('price')}}" name="price" class="form-control" id="inputPrice">
                     </div>
                     <div class="col-12 d-flex justify-content-center">
-                      <button type="submit" class="btn btn-presto">Aggiungi</button>
+                      <button type="submit" class="btn btn-presto">{{__('ui.Crea')}}</button>
                     </div>
                   </form>
            

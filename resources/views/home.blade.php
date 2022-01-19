@@ -73,9 +73,14 @@
 
                     </div>
                     <div class="dettagli">
-                        <h4>{{$article->title}}</h4>
-                        <h5>{{$article->price}} €</h5>                            
-                        <p class="mt-3">{{\Str::limit($article->description, 80)}}</p>                           
+                        <div class="mb-4">
+                            <h4>{{$article->title}}</h4>
+                        </div>
+                        <div class="mb-4">
+                        <h5>{{$article->price}} €</h5>
+                        </div>
+
+                        {{-- <p class="mt-3">{{\Str::limit($article->description, 80)}}</p>                            --}}
                         <p> Categoria: 
                             <span>
                                 @foreach ($article->categories as $category)           
@@ -88,7 +93,7 @@
                                 <a class="clicca-qui" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a>
                             </span> 
                         </p>
-                        <a href="{{route('article.show', compact('article'))}}" class="btn-presto shadow">Dettagli</a>
+                        <a href="{{route('article.show', compact('article'))}}" class="btn-presto shadow">{{__('ui.Dettagli')}}</a>
                     </div>
                 </div>                                      
                 @endforeach

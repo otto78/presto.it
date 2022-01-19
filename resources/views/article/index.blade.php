@@ -4,7 +4,7 @@
         <div class="container-fluid margin-top">
             <div class="row">
                 <div class="col-12-col-md-8">
-                  <h1 class="text-center my-5">Tutti gli annunci</h1>
+                  <h1 class="text-center my-5">{{__('ui.Tutti gli annunci')}}</h1>
                 </div>
             
                 @if (session('message'))
@@ -30,15 +30,19 @@
                                     
                                     @foreach ($article->images as $image)
                                     @if($article->images->first()==$image)
-                                    <img src="{{Storage::url($image->file)}}" class="img-presto-card" alt="Foto segnaposto">      
+                                    <img src="{{$image->getUrl(300, 300)}}" class="img-presto-card" alt="Foto segnaposto">      
                                     @endif                                                                             
                                     @endforeach
                                     
                                     </div>
                                     <div class="dettagli">
-                                    <h4>{{$article->title}}</h4>
-                                    <h5>{{$article->price}} €</h5>                            
-                                    <p class="mt-3">{{\Str::limit($article->description, 80)}}</p>                           
+                                        <div class="mb-4">
+                                            <h4>{{$article->title}}</h4>
+                                        </div>
+                                        <div class="mb-4">
+                                            <h5>{{$article->price}} €</h5>
+                                        </div>                            
+                                    {{-- <p class="mt-3">{{\Str::limit($article->description, 80)}}</p>                            --}}
                                     <p> Categoria: 
                                         <span>
                                             @foreach ($article->categories as $category)           
@@ -53,7 +57,7 @@
                                     </p>
                                         
                                     
-                                    <a href="{{route('article.show', compact('article'))}}" class="btn-presto shadow">Dettagli</a>
+                                    <a href="{{route('article.show', compact('article'))}}" class="btn-presto shadow">{{__('ui.Dettagli')}}</a>
                                     </div>
                                 </div>                                      
                             @endforeach
