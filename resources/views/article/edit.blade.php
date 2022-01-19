@@ -59,7 +59,7 @@
                                   <form method="post" action="{{route('article.edit', compact('article'))}}">
                                       @csrf
                                       @method('put')
-                                        <button type="submit" class="btn-presto">Modifica</button>
+                                        <button type="submit" class="btn-presto">{{__('ui.Modifica')}}</button>
                                   </form>
                               </div>
                                                               
@@ -68,13 +68,13 @@
                                   <form method="post" action="{{route('article.destroy', compact('article'))}}">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn-presto">Cancella</button>
+                                    <button type="submit" class="btn-presto">{{__('ui.Elimina')}}</button>
                                   </form>
                               </div>
 
                               {{-- Pulsante torna indietro --}}
                               <div class="col-4 d-flex justify-content-end">
-                                  <a href="{{route('article.show', compact('article'))}}" class="btn-presto">Torna indietro</a>
+                                  <a href="{{route('article.show', compact('article'))}}" class="btn-presto">{{__('ui.Torna indietro')}}</a>
                                 </div>
 
 

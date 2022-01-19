@@ -41,7 +41,7 @@
 
                                           <hr>
                                           <a href="{{route('article.show', compact('article'))}}" class=" btn-presto">{{__('ui.Dettagli')}}</a>
-                                          <a href="{{URL::previous()}}" class="btn-presto my-2">{{__('Torna indietro')}}</a>
+                                          <a href="{{URL::previous()}}" class="btn-presto my-2">{{__('ui.Torna indietro')}}</a>
                                           {{-- <a href="{{route('article.articlesByCategory',[
                                               $articles->category->category,
                                               $articles->category->id,
