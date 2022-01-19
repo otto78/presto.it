@@ -1,10 +1,15 @@
 <x-layout>
     
-    <section class="article-body">        
-        <div class="container-fluid margin-top">
+        
+    <div class="container-fluid bg-login margin-top">
             <div class="row">
-                <div class="col-12-col-md-8">
-                  <h1 class="text-center my-5">{{__('ui.Tutti gli annunci')}}</h1>
+                <div class="col-12">
+                          
+                    <h1 class="text-center my-5">{{__('ui.Tutti gli annunci')}}</h1>
+                    @if (count($articles)==0)                    
+                       <h3 class="text-center my-5">{{__('ui.Non ci sta nulla')}}</h3>                   
+                    @endif
+
                 </div>
             
                 @if (session('message'))
@@ -68,7 +73,7 @@
                     </div>
             </div>
             
-        </div>
-    </section>
+    </div>
+    
     
 </x-layout>
