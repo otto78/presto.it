@@ -30,7 +30,7 @@
                                     
                                     @foreach ($article->images as $image)
                                     @if($article->images->first()==$image)
-                                    <img src="{{Storage::url($image->file)}}" class="img-presto-card" alt="Foto segnaposto">      
+                                    <img src="{{$image->getUrl(300, 300)}}" class="img-presto-card" alt="Foto segnaposto">      
                                     @endif                                                                             
                                     @endforeach
                                     
