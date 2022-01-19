@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\ArticleRequest;
+use App\Jobs\GoogleVisionSafeSearchImage;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -119,6 +120,7 @@ class ArticleController extends Controller
 
                 $i->save();
                 
+                dispatch(new GoogleVisionSafeSearchImage($i->id));
             }
             
             File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));

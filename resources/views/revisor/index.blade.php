@@ -25,6 +25,11 @@
                                     <div class="col-md-9">{{$article->title}}</div>
                                 </div>
                                 <hr>
+                                {{-- <div class="row">
+                                    <div class="col-md-3"><h3>{{__('ui.Categoria')}}:</h3></div>
+                                    <div class="col-md-9">{{$article->category}}</div>
+                                </div>
+                                <hr> --}}
                                 <div class="row">
                                     <div class="col-md-3"><h3>{{__('ui.Prezzo')}}:</h3></div>
                                     <div class="col-md-9">{{$article->price}} €</div>
@@ -44,18 +49,27 @@
                                     <div class="col-md-3"><h3>{{__('ui.Immagini')}}:</h3></div>
                                     <div class="col-md-9">
                                         
-                                        <div class="row md-2 my-4">
+                                        <div class="row flex-column md-2 my-4">
                                             @foreach($article->images as $image)
-                                                <div class="col-md-4 ">
-                                                    <img 
-                                                        src="{{$image->getUrl(300, 300)}}" class="rounded shadow img-fluid m-2" alt="">
-                                                </div>
-                                                {{-- <div class="col-md-8">
-                                                    <p>Id Immagine: {{$image->id}}</p>
-                                                    <p>Percorso pubblico: {{$image->file}}</p>
-                                                    <p>Percorso Server: {{Storage::url($image->file)}}</p>                                                               
-                                                </div> --}}
+                                                <div class="d-flex">
+
                                                 
+                                                    <div class="col-md-4 ">
+                                                        <img 
+                                                            src="{{$image->getUrl(300, 300)}}" class="rounded shadow img-fluid m-2" alt="">
+                                                    </div>
+                                                    <div class="col-md-8 ps-5">
+                                                        <p>Id Immagine: {{$image->id}}</p>
+                                                        <p>adult: {{$image->adult}}</p>
+                                                        <p>spoof: {{$image->spoof}}</p>
+                                                        <p>medical: {{$image->medical}}</p>
+                                                        <p>violence: {{$image->violence}}</p>
+                                                        <p>racy: {{$image->racy}}</p>
+
+                                                        {{-- <p>Percorso pubblico: {{$image->file}}</p>
+                                                        <p>Percorso Server: {{Storage::url($image->file)}}</p>       --}}                                                         
+                                                    </div>
+                                                </div>
                                             @endforeach 
                                         </div>
                                         

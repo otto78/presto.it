@@ -11,7 +11,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
-class GoogleVisionImage implements ShouldQueue
+class GoogleVisionSafeSearchImage implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -52,7 +52,7 @@ class GoogleVisionImage implements ShouldQueue
         $violence = $safe->getViolence();
         $racy = $safe->getRacy();
 
-        echo json_encode([$adult, $spoof, $medical, $violence, $racy]);
+        //echo json_encode([$adult, $spoof, $medical, $violence, $racy]);
 
         $likelihoodName = [
             'UNKNOWN', 'VERY_UNLIKELY', 'UNLIKELY', 'POSSIBLE', 'LIKELY', 'VERYLIKELY'
