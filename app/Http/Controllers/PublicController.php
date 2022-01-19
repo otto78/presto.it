@@ -22,7 +22,7 @@ class PublicController extends Controller
 
     public function articlesByUser(User $user){
        
-        $articles=Article::where('user_id', $user->id)->where('is_accepted', true)->get();
+        $articles=Article::where('user_id', $user->id)->where('is_accepted', true)->paginate(5);
         
         return view('article.articlesByUser', compact('articles', 'user'));
     }

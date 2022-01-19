@@ -26,9 +26,9 @@
                         @if (count($articles)==0)                       
                             <h3>Non ci articoli</h3>                        
                         @endif
-                        
+                    </div>    
                         {{-- Cards --}}
-                        <div class="col-12 article">
+                    <div class="col-12 article">
                             @foreach ($articles as $article)                        
                                 <div class="card-article">
                                     <div class="circle">
@@ -66,11 +66,11 @@
                                     </div>
                                 </div>                                      
                             @endforeach
-                        </div>
-                        <div class="col-12 d-flex justify-content-center my-5">
-                            {{$articles->links()}}                      
-                        </div>
                     </div>
+                    <div class="col-12 d-flex justify-content-center my-5">
+                        {{$articles->links()}}                      
+                    </div>
+                    
             </div>
             
     </div>

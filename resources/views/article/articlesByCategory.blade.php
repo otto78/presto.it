@@ -2,7 +2,7 @@
 
     <div class="container-fluid margin-top bg-login">
     
-        <div class="container">
+        <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-12">
 
@@ -52,7 +52,9 @@
                         @endforeach
                     </div>
 
-                    {{$articles->links()}}
+                    <div class="col-12 d-flex justify-content-center my-5">
+                        {{$articles->links()}}                      
+                    </div>
             
                 </div>
             </div>   

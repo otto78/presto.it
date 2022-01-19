@@ -62,4 +62,6 @@ Route::get('/user_details/profile/', [UserDetailController::class, 'index'])->na
 
 Route::get('/article/{user}', [PublicController::class, 'articlesByUser'])->name('article.articlesByUser');
 
+Route::get('/article/auth/{user}', [ArticleController::class, 'articlesByAuth'])->name('article.articlesByAuth');
+
 
