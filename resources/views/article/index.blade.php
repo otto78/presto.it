@@ -35,9 +35,9 @@
                                     @endforeach
                                     
                                     </div>
-                                    <div class="dettagli">
+                                    <div class="dettagli container-fluid">
                                         <div class="mb-4">
-                                            <h4>{{$article->title}}</h4>
+                                            <h5>{{$article->title}}</h5>
                                         </div>
                                         <div class="mb-4">
                                             <h5>{{$article->price}} €</h5>

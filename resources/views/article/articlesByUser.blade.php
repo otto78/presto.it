@@ -1,13 +1,23 @@
 <x-layout>
 
-    <div class="container margin-top">
+    <div class="container-fluid margin-top bg-login">
 
         @if (session('message'))
         <div class="alert alert-success">
             {{ session('message') }}
         </div>
         @endif
+
+
+        {{-- bottone torna indietro --}}
+        <div class="container-fluid">
+            
+            <div class="col-12 d-flex justify-content-end fixed-bottom mb-5 p-5">
+                <a href="{{URL::previous()}}" class="btn btn-presto my-2">{{__('ui.Torna indietro')}}</a>
+            </div>
+        </div>
         
+
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12">
@@ -19,40 +29,49 @@
 
                     
                     
-                    <h1 class=" text-center mb-5" >Annunci di {{$user->name}}</h1>
+                    <h1 class=" text-center mt-5" >Annunci di {{$user->name}}</h1>
                     
-                    <div class="col-12 mx-auto d-flex flex-wrap justify-content-evenly">
-                            @foreach ($articles as $article)
-                            
-                                    <div class="card my-2" style="width: 18rem;">
-                                        <img src="/img/segnaposto.png" class="card-img-top" alt="Foto segnaposto">
-                                        <div class="card-body">
-                                          <h5 class="card-title">{{$article->title}}</h5>
-                                          
-                                          {{-- @foreach ($article->categories as $category)
-                                          
-                                          <p class="card-subtitle">{{$category->category}}</p>
-                                          <br>
-                                        
-                                          @endforeach --}}
-                                          <p class="card-text">{{\Str::limit($article->description, 80)}}</p>
-                                          <p class="card-text">{{$article->price}} €</p>
-                                          <p class="card-text">Inserito da: {{$article->user->name}}</p>
-
-                                          <hr>
-                                          <a href="{{route('article.show', compact('article'))}}" class=" btn-presto">{{__('ui.Dettagli')}}</a>
-                                          <a href="{{URL::previous()}}" class="btn-presto my-2">{{__('ui.Torna indietro')}}</a>
-                                          {{-- <a href="{{route('article.articlesByCategory',[
-                                              $articles->category->category,
-                                              $articles->category->id,
-                                          ])}}" class="btn btn-primary">{{$articles->category->category}}</a> --}}
-                                        </div>
-                                      </div>
-                            
-                            @endforeach
-                        </div>
+                    
+                    
+                    <div class="col-12 article mt-3">
+                        @foreach ($articles as $article)                        
+                        <div class="card-article">
+                            <div class="circle">
+                                
+                                @foreach ($article->images as $image)
+                                    @if($article->images->first()==$image) 
+                                        <img src="{{$image->getUrl(300, 300)}}" class="img-presto-card" alt="Foto segnaposto">    
+                                    @endif                                                                             
+                                @endforeach
+        
+                            </div>
+                            <div class="dettagli container-fluid">
+                                <div class="mb-4">
+                                    <h5>{{$article->title}}</h5>
+                                </div>
+                                <div class="mb-4">
+                                <h5>{{$article->price}} €</h5>
+                                </div>
+        
+                                {{-- <p class="mt-3">{{\Str::limit($article->description, 80)}}</p>                            --}}
+                                <p> Categoria: 
+                                    <span>
+                                        @foreach ($article->categories as $category)           
+                                        <a class="clicca-qui" href="{{route('article.articlesByCategory',[$category->category, $category->id])}}">{{$category->category}}</a>                               
+                                        @endforeach                                 
+                                    </span>
+                                </p>
+                                <p> Inserito da: 
+                                    <span>
+                                        <a class="clicca-qui" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a>
+                                    </span> 
+                                </p>
+                                <a href="{{route('article.show', compact('article'))}}" class="btn-presto shadow">{{__('ui.Dettagli')}}</a>
+                                
+                            </div>
+                        </div>                                      
+                        @endforeach
                     </div>
-                    
             </div>
         </div>
         
