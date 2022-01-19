@@ -33,7 +33,7 @@
                 {{-- Card Category --}}
                 <div class="col-12 category">
                     @foreach ($categories as $category)
-                    <div class="p-4">
+                    <div class="p-5">
                         <div class="cat-card">
                             <div class="imgbox">
                                 <img src="{{$category->image}}" alt="">
@@ -72,9 +72,9 @@
                         @endforeach
 
                     </div>
-                    <div class="dettagli container-fluid">
+                    <div class="dettagli">
                         <div class="mb-4">
-                            <h5>{{$article->title}}</h5>
+                            <h4>{{$article->title}}</h4>
                         </div>
                         <div class="mb-4">
                         <h5>{{$article->price}} €</h5>
