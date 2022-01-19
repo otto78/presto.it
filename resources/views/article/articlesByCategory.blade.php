@@ -13,7 +13,7 @@
                 <div class="col-12">
                     @if (count($articles)==0)
                     
-                        <h3>Non ci sta nulla</h3>
+                        <h3>{{__('ui.Non ci sta nulla')}}</h3>
                     
                     @endif
                     
@@ -38,8 +38,8 @@
                                           <p class="card-text">Inserito da: <a class ="clicca" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a></p>
 
                                           <hr>
-                                          <a href="{{route('article.show', compact('article'))}}" class="btn btn-presto">Dettagli</a>
-                                          <a href="{{URL::previous()}}" class="btn btn-presto my-2">Torna indietro</a>
+                                          <a href="{{route('article.show', compact('article'))}}" class="btn btn-presto">{{__('ui.Dettagli')}}</a>
+                                          <a href="{{URL::previous()}}" class="btn btn-presto my-2">{{__('Torna indietro')}}</a>
                                           {{-- <a href="{{route('article.articlesByCategory',[
                                               $articles->category->category,
                                               $articles->category->id,
