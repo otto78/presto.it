@@ -12107,6 +12107,39 @@ button{
     
     border-style: none !important;
 }
+
+.success{
+    padding: 10px 20px ;
+    background: linear-gradient(45deg, #008516, #55c26d);
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+    outline: none;
+
+}
+
+.reject{
+    background: linear-gradient(45deg, #ff2828, #fa7c7c);
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.pending{
+    background: linear-gradient(45deg, #ffa602, #fadd7c);
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+    outline: none;
+    
+}
 .flag-icon-background {
   background-size: contain;
   background-position: 50%;

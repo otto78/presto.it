@@ -63,3 +63,30 @@
         </div>
         
     </x-layout>
+
+
+    {{-- Stato annunci --}}
+    
+    {{--
+                                @if ($articles->count() > 0)
+                                    @foreach ($articles as $article)
+                                        </p>
+                                    
+                                            @if ($article->is_accepted == true)
+                                
+                                                <p class="success">Approvato</p>
+                                
+                                                @elseif ($article->is_accepted === false)
+                                
+                                                <p class="reject">Rifiutato</p>
+                                
+                                                @else
+                                
+                                                <p class="pending">In revisione</p>
+                                
+                                            @endif
+                                        </p> 
+                                    @endforeach
+                                @endif
+                                
+     --}}
