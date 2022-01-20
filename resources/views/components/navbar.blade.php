@@ -64,7 +64,7 @@
 
       <div class="dropdown ms-auto">
         <a class="presto-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-          Scegli la lingua
+          {{__('ui.Scegli la lingua')}}
         </a>
       
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
