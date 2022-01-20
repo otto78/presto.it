@@ -64,7 +64,7 @@ class GoogleVisionRemoveFaces implements ShouldQueue
                 ->watermarkWidth($w, Manipulations::UNIT_PIXELS)
                 ->watermarkHeight($h, Manipulations::UNIT_PIXELS)
                 ->watermarkFit(Manipulations::FIT_STRETCH);
-                // C:\Users\Anto\wa\presto_kek\public\img\smile.png
+                
                 $image->save($srcPath);
                 
             }
