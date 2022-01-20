@@ -68,13 +68,13 @@
                               </div>
                                                               
                               {{-- Pulsante elimina --}}
-                              <div class="col-4 d-flex justify-content-center">
+                              {{-- <div class="col-4 d-flex justify-content-center">
                                   <form method="post" action="{{route('article.destroy', compact('article'))}}">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn-presto">{{__('ui.Elimina')}}</button>
                                   </form>
-                              </div>
+                              </div> --}}
 
                               {{-- Pulsante torna indietro --}}
                               <div class="col-4 d-flex justify-content-end">
