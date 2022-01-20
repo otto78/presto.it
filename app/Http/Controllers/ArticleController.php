@@ -268,7 +268,7 @@ class ArticleController extends Controller
         
         public function articlesByAuth(User $user){
             
-            $articles=Article::where('user_id', $user->id)->where('is_accepted', true)->paginate(5);
+            $articles=Article::where('user_id', $user->id)->paginate(5);
             /* dd($articles); */
             return view('article.articlesByAuth', compact('articles', 'user'));
         }

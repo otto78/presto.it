@@ -11785,6 +11785,28 @@ button{
 
 
 
+.page-link {
+    
+    color: #2b2e2e;
+    
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+   
+  }
+
+  .page-link:hover {
+    z-index: 2;
+    color:#2b2e2e;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+  }
+
+  .page-item.active .page-link {
+    z-index: 3;
+    color: #2b2e2e;
+    background-color:#ffaf00;
+    border-color:  #ffaf00;
+  }
 .category{
     margin: 0;
     padding: 0;
@@ -11940,7 +11962,7 @@ button{
 .article .card-article{
     position: relative;
     width: 300px;
-    height: 500px;
+    height: 550px;
     background: #fff;
     margin: 20px;
     border-radius: 20px;
@@ -12109,7 +12131,7 @@ button{
 }
 
 .success{
-    padding: 10px 20px ;
+    padding: 5px 10px ;
     background: linear-gradient(45deg, #008516, #55c26d);
     color: #fff;
     border-radius: 40px;
@@ -12121,6 +12143,7 @@ button{
 }
 
 .reject{
+    padding: 5px 10px ;
     background: linear-gradient(45deg, #ff2828, #fa7c7c);
     color: #fff;
     border-radius: 40px;
@@ -12131,6 +12154,7 @@ button{
 }
 
 .pending{
+    padding: 5px 10px ;
     background: linear-gradient(45deg, #ffa602, #fadd7c);
     color: #fff;
     border-radius: 40px;
