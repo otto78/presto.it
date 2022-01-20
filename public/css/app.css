@@ -11940,7 +11940,7 @@ button{
 .article .card-article{
     position: relative;
     width: 300px;
-    height: 500px;
+    height: 550px;
     background: #fff;
     margin: 20px;
     border-radius: 20px;
@@ -12109,7 +12109,7 @@ button{
 }
 
 .success{
-    padding: 10px 20px ;
+    padding: 5px 10px ;
     background: linear-gradient(45deg, #008516, #55c26d);
     color: #fff;
     border-radius: 40px;
@@ -12121,6 +12121,7 @@ button{
 }
 
 .reject{
+    padding: 5px 10px ;
     background: linear-gradient(45deg, #ff2828, #fa7c7c);
     color: #fff;
     border-radius: 40px;
@@ -12131,6 +12132,7 @@ button{
 }
 
 .pending{
+    padding: 5px 10px ;
     background: linear-gradient(45deg, #ffa602, #fadd7c);
     color: #fff;
     border-radius: 40px;

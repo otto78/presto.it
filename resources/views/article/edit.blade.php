@@ -26,10 +26,10 @@
                       <label for="inputTitle" class="form-label">{{__('ui.Modifica il titolo del tuo annuncio')}}</label>
                       <input type="text" value="{{$article->title}}" name="title" class="form-control" id="inputTitle">
                     </div>
-                    <div class="col-12">
+                    {{-- <div class="col-12">
                       <label for="inputImg" class="form-label">{{__("ui.Cambia le immagini dell'annuncio")}}</label>
                       <input type="file" disabled value="{{old('img')}}" name="image" class="form-control" id="inputImg">
-                    </div>
+                    </div> --}}
                     <div class="col-12">
                       <label for="inputDescription" class="form-label">{{__('ui.Modifica la descrizione del tuo articolo')}}</label>
                       <textarea name="description" id="inputDescription" class="form-control">{{$article->description}}</textarea>

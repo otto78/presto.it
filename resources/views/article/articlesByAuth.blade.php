@@ -44,10 +44,29 @@
                                         <span>
                                             <a class="clicca-qui" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a>
                                         </span> 
+                                        <div>
+                                             @if ($articles->count() > 0)
+                                            {{-- @foreach ($articles as $article)  --}}
+                                                </p>
+                                                    @if ($article->is_accepted == true)
+                                                        <p class="success">Approvato</p>
+                                                        @elseif ($article->is_accepted === NULL)
+                                                        <p class="pending">In revisione</p>
+                                                        @else
+                                                        <p class="reject">Rifiutato</p>
+                                                    @endif
+                                                </p> 
+                                             {{-- @endforeach --}}
+                                         @endif 
+                                        </div>
                                     </p>
                                     <a href="{{route('article.show', compact('article'))}}" class="btn-presto shadow">{{__('ui.Dettagli')}}</a>
                                     
                                 </div>
+
+
+
+
                             </div>                                      
                         @endforeach
                     </div>
@@ -87,6 +106,7 @@
                                             @endif
                                         </p> 
                                     @endforeach
+                                 h2 -> non hai annunci   
                                 @endif
                                 
      --}}
