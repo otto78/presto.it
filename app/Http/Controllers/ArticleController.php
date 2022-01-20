@@ -13,6 +13,7 @@ use App\Jobs\GoogleVisionLabelImage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\ArticleRequest;
+use App\Jobs\GoogleVisionRemoveFaces;
 use Illuminate\Support\Facades\Storage;
 use App\Jobs\GoogleVisionSafeSearchImage;
 
@@ -124,6 +125,7 @@ class ArticleController extends Controller
                 
                 dispatch(new GoogleVisionSafeSearchImage($i->id));
                 dispatch(new GoogleVisionLabelImage($i->id));
+                dispatch(new GoogleVisionRemoveFaces($i->id));
             }
             
             File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
