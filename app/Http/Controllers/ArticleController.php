@@ -225,6 +225,7 @@ class ArticleController extends Controller
             $article->update([
                 'title'=> $request->title,
                 'description'=> $request->description,
+                'story' => $request->story,
                 'price'=> $request->price,
                 
                 

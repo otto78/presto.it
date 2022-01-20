@@ -1,7 +1,9 @@
 <x-layout>
     
+  <div class="container-fluid bg-login">
+
+  
     <div class="container margin-top">
-        
         
        
             <div class="row justify-content-center shadow">
@@ -89,6 +91,7 @@
                 
                    
     </div>
+  </div>
         
     </x-layout>
                       
