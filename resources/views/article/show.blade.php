@@ -2,12 +2,18 @@
     
   <div class="container-fluid bg-login">
 
-  
+    
+    
     <div class="container margin-top">
+      <div class="row">
+        <div class="col-12-col-md-8">
+          <h1 class="text-center my-5">Dettagli dell'annuncio</h1>
+        </div>
+      </div>
         
        
-            <div class="row justify-content-center shadow">
-                <div class="col-12 col-md-6">
+            <div class="row justify-content-center shadow bg-chiaro">
+                <div class="col-12 col-md-6 ">
                         {{-- Carosello --}}
                     <div id="carouselExampleDark" class="carousel carousel-dark slide m-4 shadow" data-bs-ride="carousel">
                         {{-- <div class="carousel-indicators">
@@ -60,19 +66,34 @@
                         <div class="col-12 col-md-6">
                                                                             
                                 <div class="my-4">
-                                    <h5>{{$article->title}}</h5>
-                                    @foreach ($article->categories as $category)
-                                    
-                                    <p >{{$category->category}}</p>
+                                    <h2>{{$article->title}}</h2>
                                     <br>
-                                    
-                                    @endforeach
-                                    
+                                    <h4>{{$article->price}} €</h4>
+                                    <br>
+                                    <p><strong>Descrizione</strong></p>
                                     <p>{{$article->description}}</p>
+                                    <p><strong>Storia</strong></p>
                                     <p>{{$article->story}}</p>
-                                    <p>{{$article->price}} €</p>
-                                    <p>Inserito il: {{$article->created_at->format('d/m/Y')}}</p>
-                                    <p>Inserito da: <a class ="clicca" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a></p>
+                                    <hr>
+                                    
+                                    <p>
+                                      <span>Inserito in
+                                        @foreach ($article->categories as $category)
+                                      
+                                        <a class="clicca-qui" href="{{route('article.articlesByCategory',[$category->category, $category->id])}}">{{$category->category}}</a>
+                                      
+                                        @endforeach
+                                      </span>
+                                      <span>
+                                        il {{$article->created_at->format('d/m/Y')}}
+                                      </span>
+                                      <span>
+                                        da <a class ="clicca-qui" href="{{route('article.articlesByUser', $article->user->id)}}">{{$article->user->name}}</a>
+                                      </span> 
+                                    </p>
+                                   
+
+                                    
                                     
                                     <hr>
                                     <a href="{{route('article.index')}}" class="btn-presto my-2">{{__('ui.Torna indietro')}}</a>
