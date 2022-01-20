@@ -105,7 +105,7 @@ class ArticleController extends Controller
                 Storage::move($image, $newFileName);
 
                 //Dimensione immagine croppata
-                dispatch(new ResizeImage(
+                /* dispatch(new ResizeImage(
                     $newFileName,
                     300, 300
                 ));
@@ -114,18 +114,26 @@ class ArticleController extends Controller
                 dispatch(new ResizeImage(
                     $newFileName,
                     600, 600
-                ));
+                )); */
                 
                 
-
                 $i->file = $newFileName;
                 $i->article_id = $article->id;
-
+                
                 $i->save();
                 
-                dispatch(new GoogleVisionSafeSearchImage($i->id));
-                dispatch(new GoogleVisionLabelImage($i->id));
-                dispatch(new GoogleVisionRemoveFaces($i->id));
+                GoogleVisionSafeSearchImage::withChain([
+
+                    new GoogleVisionLabelImage($i->id),
+                    new GoogleVisionRemoveFaces($i->id),
+                    new ResizeImage($newFileName, 300, 300),
+                    new ResizeImage($newFileName, 600, 600),
+                    
+
+
+                ])->dispatch($i->id);
+
+                
             }
             
             File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
