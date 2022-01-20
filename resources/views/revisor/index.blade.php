@@ -1,6 +1,6 @@
 <x-layout>
 
-    <div class="container-fluid margin-top bg-login">
+    <div class="container-fluid margin-top bg-login g-0">
         <div class="row justify-content-center">
             @if ($article)
                 <div class="col-12 col-lg-8 margin-top">
@@ -123,7 +123,7 @@
                 <div class="my-5 text-center">Non ci sono articoli, torna più tardi</div>
         
                 {{-- Pulsante rivaluta --}}
-                <form class="my-5 text-center" action="{{route('revisor.indexReject')}}" method="get">
+                <form class="my-5 text-center vh-100" action="{{route('revisor.indexReject')}}" method="get">
                     @csrf        
                         <button type="submit" class="btn-presto"><i class="fas fa-trash-alt fa-2x"></i></button>
                 </form>

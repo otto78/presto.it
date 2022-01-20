@@ -1,6 +1,6 @@
 <x-layout>
 
-    <div class="container-fluid margin-top bg-login">
+    <div class="container-fluid margin-top bg-login g-0">
 
         <div class="container-fluid">
             <div class="row justify-content-center">
