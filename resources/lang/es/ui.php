@@ -101,6 +101,7 @@ return[
     'Rivaluta' => 'Rivaluta',
 
     //profilo
+    'Nome e cognome: '=> 'Nome y cognome: ',
     'Altre informazioni' => 'Otra información',
 
    

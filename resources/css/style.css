@@ -11,7 +11,17 @@ body{
     background-color: var(--bg);
     font-family: 'Mochiy Pop P One', sans-serif;
     
-  
+}
+
+.container-push {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -100px; 
+}
+
+.footer, .push {
+    height: 100px; 
 }
 
 .masthead{

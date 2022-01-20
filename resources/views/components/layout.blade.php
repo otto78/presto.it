@@ -8,10 +8,17 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="shortcut icon" href="/img/icona_presto.png" />
     {{-- Libreria AOS --}}
+
+    {{-- Font-awesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Presto.it</title>
 </head>
 <body>
+  <div class="container-push">
+
+  
     
 <x-navbar>
 
@@ -25,5 +32,15 @@
     <script>
       AOS.init();
     </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+</div>
+<x-footer>
+  
+</x-footer>
+
 </body>
 </html>
+

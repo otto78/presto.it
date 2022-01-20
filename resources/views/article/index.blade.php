@@ -2,7 +2,7 @@
     
         
     <div class="container-fluid bg-login margin-top">
-            <div class="row">
+            <div class="row ">
                 <div class="col-12">
                           
                     <h1 class="text-center my-5">{{__('ui.Tutti gli annunci')}}</h1>

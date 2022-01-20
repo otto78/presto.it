@@ -98,6 +98,7 @@ return[
     'Rivaluta' => 'Rivaluta',
 
     //profilo
+    'Nome e cognome: ' => 'Nome e cognome: ',
     'Altre informazioni' => 'Altre informazioni',
 
     
