@@ -55,7 +55,7 @@
 
     {{-- Sezione Articoli --}}
     <section class="article-body">        
-        <div class="row">
+        <div class="row g-0">
             <div class="col-12">
                 <h2 class="text-center my-5">{{__('ui.Ultimi annunci')}}</h2>
             </div>
@@ -99,7 +99,10 @@
                 @endforeach
             </div>           
         </div>            
-    </section>
+    </section> 
+
+    
+    
     
     
     

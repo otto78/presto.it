@@ -100,6 +100,7 @@ return[
     'Rivaluta' => 'Reconsider',
 
     //profilo
+    'Nome e cognome: '=> 'Name and surname: ',
     'Altre informazioni' => 'Other informations',
 
     
