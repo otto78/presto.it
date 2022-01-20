@@ -8,7 +8,7 @@
 
                     <h1 class="text-center mt-5" >Annunci di {{$user->name}}</h1>
                     @if (count($articles)==0)                    
-                        <h3 class="text-center my-5">{{__('ui.Non ci sta nulla')}}</h3>                   
+                        <h3 class="text-center my-5 vh-100">{{__('ui.Non ci sta nulla')}}</h3>                   
                     @endif
                    
                     {{-- card --}}

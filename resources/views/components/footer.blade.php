@@ -1,10 +1,10 @@
 
-<footer>
-    <div class="row align-items-end g-0">
 
     
-    <div class="footer-basic ">
-        <footer>
+            
+    <div class="row align-items-end g-0">
+        <div class="footer-basic ">
+        
             <div class="social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-snapchat"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-facebook"></i></a></div>
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="{{route('home')}}">Home</a></li>
@@ -24,11 +24,10 @@
                 <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
             </ul>
             <p class="copyright">Presto.it © Made by Kogito ergo Krud</p>
-        </footer>
+        </div>
+        
     </div>
-</div>
     
-</footer>
 
         
         
