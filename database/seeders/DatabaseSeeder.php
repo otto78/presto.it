@@ -18,14 +18,14 @@ class DatabaseSeeder extends Seeder
         $categories=[
             0=>['Veicoli', '/img/img-cat/Veicoli.png'],
             1=>['Immobili', '/img/img-cat/Immobili.png'],
-            2=>['Elettrodomestici', '/img/img-cat/elettrodomestici.png'],
+            2=>['Domotica', '/img/img-cat/elettrodomestici.png'],
             3=>['Elettronica','/img/img-cat/elettronica.png'],
             4=>['Sport', '/img/img-cat/Sport.png'],
-            5=>['Attrezzatura da lavoro', '/img/img-cat/Strumenti-da-lavoro.png'],
-            6=>['Libri e riviste', '/img/img-cat/libri-e-riviste.png'],
-            7=>['Strumenti musicali', '/img/img-cat/Strumenti-musicali.png'],
+            5=>['Fai da te', '/img/img-cat/Strumenti-da-lavoro.png'],
+            6=>['Libri', '/img/img-cat/libri-e-riviste.png'],
+            7=>['Musica', '/img/img-cat/Strumenti-musicali.png'],
             8=>['Giardinaggio', '/img/img-cat/Giordinaggio.png'],
-            9=>['Videogiochi e console', '/img/img-cat/Videogiochi.png'],
+            9=>['Videogiochi', '/img/img-cat/Videogiochi.png'],
 
         ];
         
