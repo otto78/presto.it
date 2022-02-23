@@ -64,7 +64,7 @@
 
       <div class="dropdown ms-auto">
         <a class="presto-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-          Scegli la lingua
+          {{__('ui.Scegli la lingua')}}
         </a>
       
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -136,7 +136,7 @@
               {{__('ui.Ciao, ')}} {{Auth::user()->name}}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="{{route('user_details.index')}}">{{__('ui.Profilo')}}</a></li>
+                {{-- <li><a class="dropdown-item" href="{{route('user_details.index')}}">{{__('ui.Profilo')}}</a></li> --}}
                 <li><a class="dropdown-item" href=" {{route('article.articlesByAuth', Auth::id())}}">I tuoi annunci</a></li>
                 <li><hr class="dropdown-divider"></li>
                 

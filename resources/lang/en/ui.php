@@ -11,6 +11,7 @@ return[
     'Ciao, ' => 'Hello, ',
     'Annunci da revisionare' =>
     'Announcements to be reviewed',
+    'Scegli la lingua' => 'Choose the language',
 
     //Home
     'Non sei un revisore!' =>
