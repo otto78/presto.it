@@ -2,45 +2,6 @@
     <div class="container-fluid">
       <a class="navbar-brand img-scale" href="{{route('home')}}"><img src="/img/presto_scritta.png" class="img-fluid" alt="logo presto.it"></a>
       <a class="presto-link" href="{{route('article.index')}}">{{__('ui.Annunci')}}</a>
-
-      {{-- link lingue
-
-      <div class="dropdown">
-        <a class="presto-link mx-2 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-          Lingue
-        </a>
-      
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-         <li class="dropdown-item">
-          <form action="{{route('locale','it')}}" method="POST">
-          @csrf
-            <button type="submit" class="nav-link" style="background-color:transparent; border:none;">
-              <span class="flag-icon flag-icon-it"></span>
-            </button>
-          </form>
-        </li>
-        <li class="dropdown-item">
-          <form action="{{route('locale','gb')}}" method="POST">
-          @csrf
-            <button type="submit" class="nav-link" style="background-color:transparent; border:none;">
-              <span class="flag-icon flag-icon-gb"></span>
-            </button>
-          </form>
-        </li>
-        <li class="dropdown-item">
-          <form action="{{route('locale','es')}}" method="POST">
-          @csrf
-            <button type="submit" class="nav-link" style="background-color:transparent; border:none;">
-              <span class="flag-icon flag-icon-es"></span>
-            </button>
-          </form>
-        </li>
-
-
-        </ul>
-      </div>--}}
-
-      
       
       {{-- <a class="presto-link" href=""><span class="flag-icon flag-icon-it mx-2"></span></a>
       <a class="presto-link" href=""><span class="flag-icon flag-icon-gb mx-2"></span></a>
