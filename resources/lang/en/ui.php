@@ -118,5 +118,8 @@ return[
     'Hai eliminato correttamente il tuo articolo' =>
     'You have successfully deleted your article',
 
+
+    //Categoie
+    "Veicoli" => "Cars"
     
 ];

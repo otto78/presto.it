@@ -116,8 +116,8 @@ return[
     'Hai eliminato correttamente il tuo articolo',
 
 
-
-
+    //Categoie
+    "Veicoli" => "Veicoli"
 
 
 ];

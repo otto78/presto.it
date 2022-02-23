@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
 
         $categories=[
-            0=>['Veicoli', '/img/img-cat/Veicoli.png'],
+            0=>['      Veicoli', '/img/img-cat/Veicoli.png'],
             1=>['Immobili', '/img/img-cat/Immobili.png'],
             2=>['Elettrodomestici', '/img/img-cat/elettrodomestici.png'],
             3=>['Elettronica','/img/img-cat/elettronica.png'],

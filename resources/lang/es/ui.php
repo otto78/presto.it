@@ -120,4 +120,7 @@ return[
     'Has eliminado correctamente tu artículo.',
     
 
+    //Categoie
+    "Veicoli" => "Coche"
+
 ];
